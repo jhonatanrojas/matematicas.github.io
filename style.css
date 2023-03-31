@@ -423,6 +423,12 @@ a {
     body {
         background-color: var(--primary-color);
     }
+    .nxt__btn{
+        width: 50%;
+    }
+    .prev__btn{
+        width: 50%;
+    }
 
     .form__container {
         margin: 0;

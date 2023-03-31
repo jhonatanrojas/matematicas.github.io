@@ -63,6 +63,19 @@ input {
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 1em;
 }
+
+@media only screen and (max-width: 600px) {
+  .main__login-form {
+    max-width: 100%;
+    padding: 0 var(--size-4);
+  }
+  
+  .login-form {
+    border-radius: 0;
+    border: none;
+  }
+} 
+
 .login-form::before {
   background: rgba(255, 255, 255, 0.8);
   position: absolute;
