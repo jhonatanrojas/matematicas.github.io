@@ -247,7 +247,7 @@ body {
 
 
 .nxt__btn {
-    width: 30%;
+    width: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -256,7 +256,7 @@ body {
     padding: 0.75rem 0;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 5px;
+    
     background: var(--secondery-color);
     color: #ffffff;
     /* border: none; */
@@ -274,7 +274,7 @@ body {
 .buttons {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     /* float: right; */
     margin: 0;
     padding: 0;
@@ -282,9 +282,10 @@ body {
     /* justify-content:space-evenly; */
 }
 
+
 .prev__btn {
     margin: 0;
-    width: 30%;
+    width: 20%;
     padding: 0.75rem 0;
     /* background-color: #857373; */
     display: flex;
@@ -1120,5 +1121,8 @@ input[type="range"]:active::-webkit-slider-runnable-track {
         opacity: .85;
       }
       
+      .btn{
+        border-radius:unset;
+    }
     
       
