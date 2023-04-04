@@ -39,7 +39,7 @@ const inputs_clienttotal = document.getElementById("clienttotal");
 const inputs_clienttotal_2 = document.getElementById("clienttotal2");
 //inputs_clienttotal.addEventListener("keyup", event_input_total_semanal);
 inputs_clienttotal_2.addEventListener("keyup", event_input_total_semanal2);
-btn_gatos_empleado.addEventListener("click", click_input_empleado);
+
 
 // Obtenemos todos los campos de entrada con la clase "calculocliente"
 var campos = document.getElementsByClassName("calculocliente");
@@ -159,59 +159,66 @@ const ctx_chartplanfinanciero =  document.getElementById("chartplanfinanciero")
 .getContext("2d");
 
 const chartDataplanfinanciero  = {
-  labels: ['Resultado'],
-
+  labels: ['Objetivo', 'Plan Actual'],
   datasets: [
-    
     {
-      label: "Costo",
-      data: [35],
-      backgroundColor: "rgba(3, 155, 229, 0.5)",
-    
-    borderWidth: 1
+      label: 'Objetivo',
+      data: [100],
+      backgroundColor: 'rgba(75, 192, 192, 0.6)',
+      stack: 'Stack 0'
     },
     {
-      label: "Gatos generales",
-      data: [20],
-      backgroundColor: "rgba(255, 10, 102, 0.5)",
-    },
-    
-    {
-      label:  "Gastos de personal",
-      data: [25],
-      backgroundColor: "rgba(244, 208, 63, 0.6)",
+      label: 'Costo',
+      data: [null, 35],
+      backgroundColor: 'rgba(255, 99, 132, 0.6)',
+      stack: 'Stack 1'
     },
     {
-      label: "Utilidad",
-      data: [20],
-      backgroundColor: " rgba(0, 255, 65, 0.5) ",
+      label: 'Gastos generales',
+      data: [null, 20],
+      backgroundColor: 'rgba(255, 206, 86, 0.6)',
+      stack: 'Stack 1'
+    },
+    {
+      label: 'Gastos de personal',
+      data: [null, 25],
+      backgroundColor: 'rgba(153, 102, 255, 0.6)',
+      stack: 'Stack 1'
+    },
+    {
+      label: 'Utilidad',
+      data: [null, 20],
+      backgroundColor: 'rgba(54, 162, 235, 0.6)',
+      stack: 'Stack 1'
     }
-   
-  ],
+  ]
 };
 const chartOptionsplanfinanciero = {
-  scales: {
-    yAxes: [{
-        ticks: {
-            beginAtZero: true
-        }
-    }],
-},
+  indexAxis: 'x',
   plugins: {
     tooltip: {
       callbacks: {
         label: function (context) {
-          const label = context.dataset.label || "";
-
-          if (label) {
-            return label + ": " + context.formattedValue + "%";
-          } else {
-            return context.formattedValue + "%";
+          let label = context.dataset.label || '';
+          if (tooltips[label] && context.parsed.x !== null) {
+            label = tooltips[label];
           }
-        },
-      },
-    },
+          if (context.parsed.x !== null) {
+            label += ': ' + context.parsed.x;
+          }
+          return label;
+        }
+      }
+    }
   },
+  scales: {
+    x: {
+      stacked: true,
+    },
+    y: {
+      stacked: true
+    }
+  }
 };
 
 const chartplanfinanciero  = new Chart(ctx_chartplanfinanciero, {
@@ -382,7 +389,7 @@ function click_actulizar_text_grafico(label) {
   }else if(label=="Gastos de personal"){
     $(".titulo_utilidad").html("Gastos de perosonal")
     $(".titulo-porcentaje").html(porcentaje_gasto_personal+"%")
-    $(".titulo-cantidad").html("$"+monto_utilidad)
+    $(".titulo-cantidad").html("$"+gastos_empleados)
   
   }else if(label=="Utilidad"){
     $(".titulo_utilidad").html("Utilidad")
@@ -599,7 +606,7 @@ calcula_totales_empleados()
   }  else if (viewId === 8) {
     actualizarGrafico_final()
     $('.nxt__btn').hide();
-    
+    enableIconClicks();
   }else if(viewId == 9){
 
  
@@ -608,9 +615,24 @@ calcula_totales_empleados()
  
   progressBar();
   displayForms();
+
+ 
 }
 
+function enableIconClicks() {
+  icons.forEach((icon, index) => {
+    icon.addEventListener('click', function() {
+      // Suma 1 al índice, ya que viewId comienza desde 1
+      goToForm(index + 1);
+    });
+  });
+}
 
+function goToForm(formIndex) {
+  viewId = formIndex;
+  progressBar();
+  displayForms();
+}
 
 
 
@@ -975,7 +997,7 @@ function mostrarEmoji(respuesta, msj = "") {
   } else {
     emojiElement.style.display = "none";
     emojiElement.style.display = "block";
-    emojiElement.innerHTML = emojione.toImage("😒");
+    emojiElement.innerHTML = emojione.toImage("😡");
     emojiTextElement.innerHTML = msj + ".";
   }
 }
@@ -1244,8 +1266,7 @@ function calcularClientesPorDia(consumoPromedio, metaVentasMensual) {
 }
 
 function actualizarGrafico_final() {
-  
-  var costo_promedio=  $("#costo_promedio").val()
+ var costo_promedio=  $("#costo_promedio").val()
   var total_gasto_general=  $("#total_gasto_general").val()
   var gastos_empleados=  $("#gastos_empleados").val()
   const objetivo_mensual  = document.querySelector("#objetivo_mensual").value;
@@ -1259,10 +1280,39 @@ function actualizarGrafico_final() {
  $(".titulo_utilidad").html("Utilidad")
  $(".titulo-porcentaje").html(porcentaje_utilidad+"%")
  $(".titulo-cantidad").html("$"+monto_utilidad)
- chartplanfinanciero.data.datasets[0].data = nuevosDatos;
+ var newObjectiveLabel =objetivo_mensual;
 
+ const newData = {
+  objetivo: 100,
+  costo: parseInt(costo_promedio),
+  gastosGenerales:porcentaje_gasto,
+  gastosPersonal:porcentaje_gasto_personal,
+  utilidad:porcentaje_utilidad
+};
+const newTooltips = {
+  Objetivo: "$"+objetivo_mensual,
+  Costo:costo_promedio+"%",
+  "Gastos generales": porcentaje_gasto+"%",
+  "Gastos de personal": porcentaje_gasto_personal+"%",
+  Utilidad: porcentaje_utilidad+"%"
+};
 
-  chartplanfinanciero.update();
+ updateChartData(newData,newTooltips)
+  //chartplanfinanciero.update();
+}
+function updateChartData(newData,newTooltips) {
+  // Asume que newData es un objeto con la siguiente estructura:
+  // { objetivo: number, costo: number, gastosGenerales: number, gastosPersonal: number, utilidad: number }
+  
+  tooltips = newTooltips; // Actualiza los tooltips
+
+  chartplanfinanciero.data.datasets[0].data = [newData.objetivo];
+  chartplanfinanciero.data.datasets[1].data = [null, newData.costo];
+  chartplanfinanciero.data.datasets[2].data = [null, newData.gastosGenerales];
+  chartplanfinanciero.data.datasets[3].data = [null, newData.gastosPersonal];
+  chartplanfinanciero.data.datasets[4].data = [null, newData.utilidad];
+
+  chartplanfinanciero.update(); // Actualiza el gráfico con los nuevos datos
 }
 
 function actualizarGrafico(objetivo, plan) {
@@ -1500,12 +1550,7 @@ function change_input_empleado(event) {
 
 
 
-function  click_input_empleado(event){
-  
-  let  valor_gastos= cgastos_empleadosInput.value
-  actuliza_valor_tabla_gastos(valor_gastos);
 
-}
 
 function actuliza_valor_tabla_gastos(valor_gastos) {
 

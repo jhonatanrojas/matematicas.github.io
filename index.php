@@ -44,7 +44,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=1.0.1" />
 
     <style>
       body {
@@ -158,11 +158,7 @@
                 <div class="col-md-6 col-xs-12">
                   <label for="rentabilidad"> Utilidad Mes</label>
                   <div class="input-group number-spinner">
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="up">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+              
                     <input
                       type="number"
                       min="0"
@@ -170,11 +166,7 @@
                       id="rentabilidad"
                       placeholder="Ingrese un valor"
                     />
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="dwn">
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                
                   </div>
                 </div>
               </div>
@@ -221,25 +213,17 @@
                 <div class="col-md-6 col-xs-12">
                   <label for="tenedor_promedio"> Tenedor promedio</label>
                   <div class="input-group number-spinner">
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="up">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                  
                     <input
                       type="number"
-                      class="form-control text-center"
+                      class="form-control text-right"
                       id="tenedor_promedio"
                       value=""
                       placeholder="Ingrese un valor"
                       min="0"
                       max=""
                     />
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="dwn">
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                   
                   </div>
                 </div>
               </div>
@@ -1063,7 +1047,7 @@
                
 
                   <table style="padding-bottom: 0px" class="table">
-                    <thead>
+                    <thead class="thead-dark">
                       <th></th>
                       <th>Clientes por dia</th>
                       <th>% de clientes a la semana</th>
@@ -1099,7 +1083,7 @@
                             <div class="tick-slider">
                               <input
                                 id="porcentaje_c1"
-                                class="tick-slider-pag-3"
+                                class="tick-slider-pag-3 form-control"
                                 type="number"
                                 min="0"
                                 data-id="1"
@@ -1151,7 +1135,7 @@
                             <div class="tick-slider">
                               <input
                                 id="porcentaje_c2"
-                                class="tick-slider-pag-4"
+                                class="tick-slider-pag-4 form-control"
                                 type="number"
                                 min="0"
                                 max="500"
@@ -1205,7 +1189,7 @@
                             <div class="tick-slider">
                               <input
                                 id="porcentaje_c3"
-                                class="tick-slider-pag-4"
+                                class="tick-slider-pag-4 form-control"
                                 type="number"
                                 min="0"
                                 max="500"
@@ -1259,7 +1243,7 @@
                             <div class="tick-slider">
                               <input
                                 id="porcentaje_c4"
-                                class="tick-slider-pag-4"
+                                class="tick-slider-pag-4 form-control"
                                 type="number"
                                 min="0"
                                 max="500"
@@ -1313,7 +1297,7 @@
                             <div class="tick-slider">
                               <input
                                 id="porcentaje_c5"
-                                class="tick-slider-pag-4"
+                                class="tick-slider-pag-4 form-control"
                                 type="number"
                                 min="0"
                                 max="500"
@@ -1369,7 +1353,7 @@
                             <div class="tick-slider">
                               <input
                                 id="porcentaje_c6"
-                                class="tick-slider-pag-4"
+                                class="tick-slider-pag-4 form-control"
                                 type="number"
                                 min="0"
                                 max="500"
@@ -1425,7 +1409,7 @@
                             <div class="tick-slider">
                               <input
                                 id="porcentaje_c7"
-                                class="tick-slider-pag-4"
+                                class="form-control"
                                 type="number"
                                 min="0"
                                 max="500"
@@ -1483,30 +1467,14 @@
                     <div class="col-6">
                       <label for="tenedor_promedio2"> Tenedor promedio</label>
                       <div class="input-group number-spinner">
-                        <span class="input-group-btn">
-                          <button
-                            onclick="click_tenedor_promedio() "
-                            class="btn btn-info text-white"
-                            data-dir="up"
-                          >
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                          </button>
-                        </span>
+                       
                         <input
                           type="text"
-                          class="form-control text-center"
+                          class="form-control text-right"
                           id="tenedor_promedio2"
                           value=""
                         />
-                        <span class="input-group-btn">
-                          <button
-                            onclick="click_tenedor_promedio() "
-                            class="btn btn-info text-white"
-                            data-dir="dwn"
-                          >
-                            <i class="fa fa-minus" aria-hidden="true"></i>
-                          </button>
-                        </span>
+                       
                       </div>
                     </div>
                   </div>
@@ -1625,24 +1593,16 @@
                     Sueldo promedio mes $ por empleado</label
                   >
                   <div class="input-group number-spinner">
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="up">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                
                     <input
                       type="number"
                       min="0"
-                      class="form-control text-center"
+                      class="form-control text-right"
                       id="sueldo_promedio"
                       placeholder="Ingrese un valor"
                       value=""
                     />
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="dwn">
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                  
                   </div>
                 </div>
               </div>
@@ -1654,24 +1614,16 @@
                     mes</label
                   >
                   <div class="input-group number-spinner">
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="up">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                
                     <input
                     placeholder="Ingrese un valor"
                       type="number"
                       min="0"
-                      class="form-control text-center"
+                      class="form-control text-right"
                       id="valor_beneficio_promedio"
                       value="0"
                     />
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="dwn">
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                  
                   </div>
                 </div>
               </div>
@@ -1708,8 +1660,8 @@
 
             <div class="input__container">
               <div class="table-responsive">
-                <table class="table table-sm table-hover table-striped">
-                  <thead>
+                <table class="table table-sm table-hover ">
+                  <thead class="thead-dark">
                     <tr>
                       <th scope="col">Tipo empleado</th>
                       <th scope="col">Cantidad</th>
@@ -1721,14 +1673,14 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">Cajero</th>
+                      <td scope="Cajero " class="rowcol">Cajero</td>
                       <td>
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
                             <span class="input-group-text"></span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             data-id="1"
                             class="form-control cantidade cantidade1"
                             id="cant_cajeros"
@@ -1743,7 +1695,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="tsueldo1"
                             value="0"
@@ -1756,7 +1708,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="tbeneficio1"
                             value="0"
@@ -1769,7 +1721,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="totros1"
                             value="0"
@@ -1782,16 +1734,17 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="ttotale1"
                             value="0"
+                            readonly
                           />
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">Cocina</th>
+                      <td scope="Cocina" class="rowcol">Cocina</td>
 
                       <td>
                         <div class="input-group mb-3">
@@ -1799,7 +1752,7 @@
                             <span class="input-group-text"></span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             data-id="2"
                             class="form-control cantidade cantidade2"
                             id="cant_cocina"
@@ -1857,12 +1810,13 @@
                             class="form-control"
                             id="ttotale2"
                             value="0"
+                            readonly
                           />
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">Meseros</th>
+                      <td scope="Meseros" class="rowcol">Meseros</td>
 
                       <td>
                         <div class="input-group mb-3">
@@ -1927,12 +1881,13 @@
                             class="form-control"
                             id="ttotale3"
                             value="0"
+                            readonly
                           />
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">Administrador</th>
+                      <td scope="Administrador" class="rowcol">Administrador</td>
                       <td>
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
@@ -1995,12 +1950,13 @@
                             class="form-control"
                             id="ttotale4"
                             value="0"
+                            readonly
                           />
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">Otros</th>
+                      <td scope="Otros" class="rowcol">Otros</td>
                       <td>
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
@@ -2064,6 +2020,7 @@
                             class="form-control"
                             id="ttotale5"
                             value="0"
+                            readonly
                           />
                         </div>
                       </td>
@@ -2076,28 +2033,14 @@
                 <div class="col-xs-12 col-md-6">
                   <label for="tenedor_promedio"> Gasto empleado Mes $</label>
                   <div class="input-group number-spinner">
-                    <span class="input-group-btn">
-                      <button
-                        class="btn btn-info text-white btn_gatos_empleado"
-                        data-dir="up"
-                      >
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+               
                     <input
                       type="number"
-                      class="form-control text-center"
+                      class="form-control text-right"
                       id="gastos_empleados"
                       value="0"
                     />
-                    <span class="input-group-btn">
-                      <button
-                        class="btn btn-info text-white btn_gatos_empleado"
-                        data-dir="dwn"
-                      >
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                    
                   </div>
                   <input type="hidden" name="" id="sueldo_promedio_final" />
                   <div class="custom-control custom-checkbox">
@@ -2140,18 +2083,13 @@
             </div>
 
             <div class="input__container">
-              <button
-                onclick="agregar_fila_gastos()"
-                class="btn btn-primary w-25 col-2 align-self-end float-right"
-              >
-                <i class="fa fa-plus" aria-hidden="true"></i>
-              </button>
+          
               <div class="table-responsive">
                 <table
-                  class="table table-hover table-striped"
+                  class="table table-hover "
                   id="tabla_gasto_general"
                 >
-                  <thead>
+                  <thead class="thead-dark">
                     <tr>
                       <th scope="col">Descripción Rubro</th>
                       <th scope="col">Valor Mes</th>
@@ -2182,7 +2120,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="gastogral2"
                             value="0"
@@ -2212,7 +2150,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="gastogral3"
                             value="0"
@@ -2241,7 +2179,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="text"
+                            type="number"
                             class="form-control"
                             id="gastogral4"
                             value="0"
@@ -2252,16 +2190,17 @@
                   </tbody>
                 </table>
               </div>
-
+              <button data-toggle="tooltip" data-placement="top" title="Agregar nueva fila"
+                onclick="agregar_fila_gastos()"
+                class="btn btn-primary w-25 col-2 align-self-end float-right"
+              >
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
               <div class="row justify-content-md-center mb-5">
                 <div class="col-xs-12 col-md-6">
                   <label for="tenedor_promedio"> Gatos $</label>
                   <div class="input-group number-spinner">
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="up">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                   
                     <input
                       type="text"
                       class="form-control text-center"
@@ -2269,11 +2208,7 @@
                       value="0"
                       readonly
                     />
-                    <span class="input-group-btn">
-                      <button class="btn btn-info text-white" data-dir="dwn">
-                        <i class="fa fa-minus" aria-hidden="true"></i>
-                      </button>
-                    </span>
+                   
                   </div>
                 </div>
               </div>
@@ -2306,18 +2241,18 @@
             </div>
 
             <div class="input__container">
-              <div class="row" style="overflow: auto; max-height: 55vh">
+              <div class="row">
                 <div class="col-xs-12 col-md-6">
                   <div
                     class="imagen-grafico-chartplanfinanciero d-flex flex-row"
-                    style="position: relative; height: 35vh; width: 32vw"
+                    style="position: relative; height: 45vh; width: 35vw"
                   >
                     <canvas id="chartplanfinanciero"></canvas>
                   </div>
                 </div>
 
                 <div class="col-xs-12 col-md-6">
-                  <div class="row justify-content-md-center mb-5">
+                  <div class="row justify-content-md-center mb-5 pl-4">
                     <div class="col-md-6 col-xs-12">
                       <h2 class="titulo_utilidad">Tu Utilidad</h2>
                       <h2 class="form-porcentaje titulo-porcentaje">18%</h2>
@@ -2395,8 +2330,13 @@
       const nxtBtn = document.querySelector("#submitBtn");
     </script>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=1.0.1"></script>
 
-    <script type="text/javascript" src="#"></script>
+    <script type="text/javascript" src="#"
+    >
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+  </script>
   </body>
 </html>
