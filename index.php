@@ -663,7 +663,7 @@
                     </span>
                     <input
                       type="text"
-                      class="form-control validar_input text-cemter"
+                      class="form-control validar_input text-center"
                       id="costo_promedio"
                       value="35"
                     />
