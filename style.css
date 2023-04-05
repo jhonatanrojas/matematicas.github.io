@@ -21,7 +21,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
+       font-family: "Times New Roman", Times, serif;
+
 
 }
 .text-center{
@@ -73,6 +74,7 @@ body {
     color: #000000;
     font-size: 1.25rem;
     margin-bottom: 0.4rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .title__container p {
@@ -123,14 +125,14 @@ body {
     margin-bottom: 0px;
     text-align: right;
     color: #42434e;
-    font-size: 1rem;
+    font-size: 1.2rem;
  
 }
 
 .title__name p {
     text-align: right;
     color: var(--shadow-color);
-    font-size: 0.7rem;
+    font-size: 0.85rem;
 }
 
 .progress__bar__container {
@@ -200,11 +202,12 @@ body {
     font-size: 1.5rem;
     color: #42434e;
     margin: 0.4rem 0;
-    font-family:'Roboto';
+       font-family: "Times New Roman", Times, serif;
+
 }
 
 .sub__title__container p {
-    font-size: 0.95rem;
+    font-size: 0.99rem;
     color: var(--shadow-color);
 }
 
@@ -812,7 +815,7 @@ background-size: 0 6%;
 .tick-slider-header>h5 {
     margin: 0;
 
-    font-family: "Poppins", sans-serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 18px;
     font-weight: 300;
     color: var(--gray);
@@ -834,7 +837,8 @@ background-size: 0 6%;
 
 
 
-    font-family: "Hind Madurai", sans-serif;
+       font-family: "Times New Roman", Times, serif;
+
     font-size: 0.8rem;
     color: var(--gray);
 }

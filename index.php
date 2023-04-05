@@ -160,11 +160,11 @@
                   <div class="input-group number-spinner">
               
                     <input
-                      type="number"
+                      type="text"
                       min="0"
-                      class="form-control text-center form-control-sm"
+                      class="form-control form-control-sm validar_input "
                       id="rentabilidad"
-                      placeholder="Ingrese un valor"
+                      placeholder="0"
                     />
                 
                   </div>
@@ -210,16 +210,16 @@
 
             <div class="input__container">
               <div class="row justify-content-md-center mb-5">
-                <div class="col-md-6 col-xs-12">
+                <div class="col-md-4 col-xs-12">
                   <label for="tenedor_promedio"> Tenedor promedio</label>
                   <div class="input-group number-spinner">
                   
                     <input
-                      type="number"
-                      class="form-control text-right"
+                      type="text"
+                      class="form-control text-right validar_input"
                       id="tenedor_promedio"
                       value=""
-                      placeholder="Ingrese un valor"
+                      placeholder="0"
                       min="0"
                       max=""
                     />
@@ -239,792 +239,7 @@
               <p class="text-center page">Pag 2/8</p>
             </div>
           </fieldset>
-          <!-- fieldset
-            style="display: none"
-            class="active__form fieldsetform animate__animated"
-            id="form3"
-          >
-            <div class="sub__title__container">
-              <h2>Objetivos por dia</h2>
-              <p class="text-dark">
-                En base a tu tenedor promedio, hemos calculado cuantos clientes
-                debes atender cada día de la semana para que llegues al
-                objetivo. Ajusta los valores para reflejar mejor la realidad de
-                tu plan de Establecimiento.
-              </p>
-            </div>
-
-            <div class="input__container">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="pt-input-group">
-                    <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">
-                          Total % de clientes semanales</span
-                        >
-                      </div>
-                      <input
-                        type="number"
-                        class="form-control"
-                        readonly
-                        id="sumaTotal"
-                        placeholder="Username"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1"
-                        >Total clientes semanales</span
-                      >
-                    </div>
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="clienttotal"
-                      placeholder="Username"
-                      aria-label="Username"
-                      aria-describedby="basic-addon1"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <table class="table">
-                <thead>
-                  <th></th>
-                  <th>% de clientes por dia</th>
-                  <th>Clientes por dia</th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td data-label="L">Lunes</td>
-                      <td data-label="Client x dia*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div id="weightLabelMin" class="tick-slider-label">
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMax"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValue"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgress"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicks"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="porcentaje_m1"
-                            class="tabla1 tick-slider-input"
-                            type="range"
-                            min="0"
-                            data-id="1"
-                            max="100"
-                            step="5"
-                            value="20"
-                            data-tick-step="5"
-                            data-tick-id="weightTicks"
-                            data-value-id="weightValue"
-                            data-progress-id="weightProgress"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMin"
-                            data-max-label-id="weightLabelMax"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                      <td data-label="%*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div
-                              id="weightLabelMinc1"
-                              class="tick-slider-label"
-                            >
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMaxc1"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValuec1"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgressc1"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicksc1"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="clientes_l1"
-                            class="tabla1 tick-slider-input-2"
-                            type="range"
-                            min="0"
-                            max="500"
-                            step="5"
-                            value="100"
-                            data-id="1"
-                            data-tick-step="5"
-                            data-tick-id="weightTicksc1"
-                            data-value-id="weightValuec1"
-                            data-progress-id="weightProgressc1"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMinc1"
-                            data-max-label-id="weightLabelMaxc1"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td data-label="M">Martes</td>
-                      <td data-label="Client x dia*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div id="weightLabelMin2" class="tick-slider-label">
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMax2"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValue2"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgress"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicks2"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="porcentaje_m2"
-                            class="tabla1 tick-slider-input"
-                            type="range"
-                            min="0"
-                            max="100"
-                            step="5"
-                            value="20"
-                            data-id="2"
-                            data-tick-step="5"
-                            data-tick-id="weightTicks2"
-                            data-value-id="weightValue2"
-                            data-progress-id="weightProgress"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMin2"
-                            data-max-label-id="weightLabelMax2"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                      <td data-label="%*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div
-                              id="weightLabelMinc2"
-                              class="tick-slider-label"
-                            >
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMaxc2"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValuec2"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgressc2"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicksc2"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="clientes_l2"
-                            class="tick-slider-input-2"
-                            type="range"
-                            min="0"
-                            max="500"
-                            step="5"
-                            value="100"
-                            data-id="2"
-                            data-tick-step="5"
-                            data-tick-id="weightTicksc2"
-                            data-value-id="weightValuec2"
-                            data-progress-id="weightProgressc2"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMinc2"
-                            data-max-label-id="weightLabelMaxc2"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td data-label="M">Miercoles</td>
-                      <td data-label="Client x dia*">
-                      <div class="pt-input-group">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <div class="tick-slider-value-container">
-                              <div
-                                id="weightLabelMin3"
-                                class="tick-slider-label"
-                              >
-                                0
-                              </div>
-                              <div
-                                id="weightLabelMax3"
-                                class="tick-slider-label"
-                              ></div>
-                              <div
-                                id="weightValue3"
-                                class="tick-slider-value"
-                              ></div>
-                            </div>
-                            <div class="tick-slider-background"></div>
-                            <div
-                              id="weightProgress"
-                              class="tick-slider-progress"
-                            ></div>
-                            <div
-                              id="weightTicks3"
-                              class="tick-slider-tick-container"
-                            ></div>
-                            <input
-                              id="porcentaje_m3"
-                              class="tick-slider-input"
-                              type="range"
-                              min="0"
-                              max="100"
-                              step="5"
-                              value="20"
-                              data-id="3"
-                              data-tick-step="5"
-                              data-tick-id="weightTicks3"
-                              data-value-id="weightValue3"
-                              data-progress-id="weightProgress"
-                              data-handle-size="18"
-                              data-min-label-id="weightLabelMin3"
-                              data-max-label-id="weightLabelMax3"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                      <td data-label="%*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div
-                              id="weightLabelMinc3"
-                              class="tick-slider-label"
-                            >
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMaxc3"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValuec3"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgressc3"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicksc3"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="clientes_l3"
-                            class="tick-slider-input-2"
-                            type="range"
-                            min="0"
-                            max="500"
-                            step="5"
-                            data-id="3"
-                            value="100"
-                            data-tick-step="5"
-                            data-tick-id="weightTicksc3"
-                            data-value-id="weightValuec3"
-                            data-progress-id="weightProgressc3"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMinc3"
-                            data-max-label-id="weightLabelMaxc3"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td data-label="J">Jueves</td>
-                      <td data-label="Client x dia*">
-                      <div class="pt-input-group">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <div class="tick-slider-value-container">
-                              <div
-                                id="weightLabelMin4"
-                                class="tick-slider-label"
-                              >
-                                0
-                              </div>
-                              <div
-                                id="weightLabelMax4"
-                                class="tick-slider-label"
-                              ></div>
-                              <div
-                                id="weightValue4"
-                                class="tick-slider-value"
-                              ></div>
-                            </div>
-                            <div class="tick-slider-background"></div>
-                            <div
-                              id="weightProgress"
-                              class="tick-slider-progress"
-                            ></div>
-                            <div
-                              id="weightTicks4"
-                              class="tick-slider-tick-container"
-                            ></div>
-                            <input
-                              id="porcentaje_m4"
-                              class="tick-slider-input"
-                              type="range"
-                              min="0"
-                              max="100"
-                              step="5"
-                              data-id="4"
-                              value="20"
-                              data-tick-step="5"
-                              data-tick-id="weightTicks4"
-                              data-value-id="weightValue4"
-                              data-progress-id="weightProgress"
-                              data-handle-size="18"
-                              data-min-label-id="weightLabelMin4"
-                              data-max-label-id="weightLabelMax4"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                      <td data-label="%*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div
-                              id="weightLabelMinc4"
-                              class="tick-slider-label"
-                            >
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMaxc4"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValuec4"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgressc4"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicksc4"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="clientes_l4"
-                            class="tick-slider-input-2"
-                            type="range"
-                            min="0"
-                            max="500"
-                            step="5"
-                            value="100"
-                            data-id="4"
-                            data-tick-step="5"
-                            data-tick-id="weightTicksc4"
-                            data-value-id="weightValuec4"
-                            data-progress-id="weightProgressc4"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMinc4"
-                            data-max-label-id="weightLabelMaxc4"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td data-label="V">Viernes</td>
-                      <td data-label="Client x dia*">
-                      <div class="pt-input-group">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <div class="tick-slider-value-container">
-                              <div
-                                id="weightLabelMin5"
-                                class="tick-slider-label"
-                              >
-                                0
-                              </div>
-                              <div
-                                id="weightLabelMax5"
-                                class="tick-slider-label"
-                              ></div>
-                              <div
-                                id="weightValue5"
-                                class="tick-slider-value"
-                              ></div>
-                            </div>
-                            <div class="tick-slider-background"></div>
-                            <div
-                              id="weightProgress5"
-                              class="tick-slider-progress"
-                            ></div>
-                            <div
-                              id="weightTicks5"
-                              class="tick-slider-tick-container"
-                            ></div>
-                            <input
-                              id="porcentaje_m5"
-                              class="tick-slider-input"
-                              type="range"
-                              min="0"
-                              max="100"
-                              step="5"
-                              value="20"
-                              data-id="5"
-                              data-tick-step="5"
-                              data-tick-id="weightTicks5"
-                              data-value-id="weightValue5"
-                              data-progress-id="weightProgress5"
-                              data-handle-size="18"
-                              data-min-label-id="weightLabelMin5"
-                              data-max-label-id="weightLabelMax5"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                      <td data-label="%*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div
-                              id="weightLabelMinc5"
-                              class="tick-slider-label"
-                            >
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMaxc5"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValuec5"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgressc5"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicksc5"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="clientes_l5"
-                            class="tick-slider-input-2"
-                            type="range"
-                            min="0"
-                            max="500"
-                            step="5"
-                            value="100"
-                            data-id="5"
-                            data-tick-step="5"
-                            data-tick-id="weightTicksc5"
-                            data-value-id="weightValuec5"
-                            data-progress-id="weightProgressc5"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMinc5"
-                            data-max-label-id="weightLabelMaxc5"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td data-label="S">Sabado</td>
-                      <td data-label="Client x dia*">
-                      <div class="pt-input-group">
-                        <div class="pt-input-group">
-                          <div class="pt-input-group">
-                            <div class="tick-slider">
-                              <div class="tick-slider-value-container">
-                                <div
-                                  id="weightLabelMin6"
-                                  class="tick-slider-label"
-                                >
-                                  0
-                                </div>
-                                <div
-                                  id="weightLabelMax6"
-                                  class="tick-slider-label"
-                                ></div>
-                                <div
-                                  id="weightValue6"
-                                  class="tick-slider-value"
-                                ></div>
-                              </div>
-                              <div class="tick-slider-background"></div>
-                              <div
-                                id="weightProgress6"
-                                class="tick-slider-progress"
-                              ></div>
-                              <div
-                                id="weightTicks6"
-                                class="tick-slider-tick-container"
-                              ></div>
-                              <input
-                                id="porcentaje_m6"
-                                class="tick-slider-input"
-                                type="range"
-                                min="0"
-                                max="100"
-                                step="5"
-                                data-id="6"
-                                value="0"
-                                data-tick-step="5"
-                                data-tick-id="weightTicks6"
-                                data-value-id="weightValue6"
-                                data-progress-id="weightProgress6"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMin6"
-                                data-max-label-id="weightLabelMax6"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                      <td data-label="%*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div
-                              id="weightLabelMinc6"
-                              class="tick-slider-label"
-                            >
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMaxc6"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValuec6"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgressc6"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicksc6"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="clientes_l6"
-                            class="tick-slider-input-2"
-                            type="range"
-                            min="0"
-                            max="500"
-                            step="5"
-                            data-id="6"
-                            value="0"
-                            data-tick-step="5"
-                            data-tick-id="weightTicksc6"
-                            data-value-id="weightValuec6"
-                            data-progress-id="weightProgressc6"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMinc6"
-                            data-max-label-id="weightLabelMaxc6"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td data-label="D">Domingo</td>
-                      <td data-label="Client x dia*">
-                      <div class="pt-input-group">
-                        <div class="pt-input-group">
-                          <div class="pt-input-group">
-                            <div class="tick-slider">
-                              <div class="tick-slider-value-container">
-                                <div
-                                  id="weightLabelMin7"
-                                  class="tick-slider-label"
-                                >
-                                  0
-                                </div>
-                                <div
-                                  id="weightLabelMax7"
-                                  class="tick-slider-label"
-                                ></div>
-                                <div
-                                  id="weightValue7"
-                                  class="tick-slider-value"
-                                ></div>
-                              </div>
-                              <div class="tick-slider-background"></div>
-                              <div
-                                id="weightProgress7"
-                                class="tick-slider-progress"
-                              ></div>
-                              <div
-                                id="weightTicks7"
-                                class="tick-slider-tick-container"
-                              ></div>
-                              <input
-                                id="porcentaje_m7"
-                                class="tick-slider-input"
-                                type="range"
-                                min="0"
-                                max="100"
-                                step="5"
-                                value="0"
-                                data-id="7"
-                                data-tick-step="5"
-                                data-tick-id="weightTicks7"
-                                data-value-id="weightValue7"
-                                data-progress-id="weightProgress7"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMin7"
-                                data-max-label-id="weightLabelMax7"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                      <td data-label="%*">
-                      <div class="pt-input-group">
-                        <div class="tick-slider">
-                          <div class="tick-slider-value-container">
-                            <div
-                              id="weightLabelMinc7"
-                              class="tick-slider-label"
-                            >
-                              0
-                            </div>
-                            <div
-                              id="weightLabelMaxc7"
-                              class="tick-slider-label"
-                            ></div>
-                            <div
-                              id="weightValuec7"
-                              class="tick-slider-value"
-                            ></div>
-                          </div>
-                          <div class="tick-slider-background"></div>
-                          <div
-                            id="weightProgressc7"
-                            class="tick-slider-progress"
-                          ></div>
-                          <div
-                            id="weightTicksc7"
-                            class="tick-slider-tick-container"
-                          ></div>
-                          <input
-                            id="clientes_l7"
-                            class="tick-slider-input-2"
-                            type="range"
-                            min="0"
-                            max="500"
-                            step="5"
-                            value="0"
-                            data-id="7"
-                            data-tick-step="5"
-                            data-tick-id="weightTicksc7"
-                            data-value-id="weightValuec7"
-                            data-progress-id="weightProgressc7"
-                            data-handle-size="18"
-                            data-min-label-id="weightLabelMinc7"
-                            data-max-label-id="weightLabelMaxc7"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p id="mensajeSuma"></p>
-              <br />
-
-              <div class="buttons">
-                <a class="prev__btn btn btn btn-secondary" onclick="prevForm();"
-                  >Regresar</a
-                >
-                <a class="nxt__btn btn-info text-white" onclick="nextForm();"
-                  >Siguiente</a
-                >
-              </div>
-              <p class="text-center page">Pag 3/8</p>
-            </div>
-          </fieldset -->
+          
           <fieldset
             class="active__form fieldsetform animate__animated imprimirpdf"
             id="form3"
@@ -1059,9 +274,9 @@
                           <div class="pt-input-group">
                             <div class="tick-slider">
                               <input
-                                id="clientes_c1"
-                                class="tick-slider-pag-4 form-control"
-                                type="number"
+                                id="lunes"
+                                class="tick-slider-pag-4 form-control validar_input clientes-dia"
+                                type="text"
                                 min="0"
                                 max="500"
                                 step="5"
@@ -1081,10 +296,10 @@
                           <td data-label="Client x dia*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input
-                                id="porcentaje_c1"
-                                class="tick-slider-pag-3 form-control"
-                                type="number"
+                              <p
+                                id="porcentaje-lunes"
+                                class="tick-slider-pag-3  "
+                                type="text"
                                 min="0"
                                 data-id="1"
                                 max="100"
@@ -1098,7 +313,7 @@
                                 data-min-label-id="weightLabelMin"
                                 data-max-label-id="weightLabelMax"
                               readonly
-                              />
+                              ></p>
                             </div>
                           </div>
                         </td>
@@ -1110,21 +325,15 @@
                           <div class="pt-input-group">
                             <div class="tick-slider">
                               <input
-                                id="clientes_c2"
-                                class="tick-slider-pag-3"
-                                type="number"
+                                id="martes"
+                                class="tick-slider-pag-3 validar_input clientes-dia"
+                                type="text"
                                 min="0"
                                 max="100"
                                 step="5"
                                 value="20"
                                 data-id="2"
-                                data-tick-step="5"
-                                data-tick-id="weightTicks2"
-                                data-value-id="weightValue2"
-                                data-progress-id="weightProgress"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMin2"
-                                data-max-label-id="weightLabelMax2"
+              
                          
                               />
                             </div>
@@ -1133,24 +342,18 @@
                           <td data-label="%*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input
-                                id="porcentaje_c2"
-                                class="tick-slider-pag-4 form-control"
-                                type="number"
+                              <p
+                                id="porcentaje-martes"
+                                class="tick-slider-pag-4 "
+                                type="text"
                                 min="0"
                                 max="500"
                                 step="5"
                                 value="100"
                                 data-id="2"
-                                data-tick-step="5"
-                                data-tick-id="weightTicksc2"
-                                data-value-id="weightValuec2"
-                                data-progress-id="weightProgressc2"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMinc2"
-                                data-max-label-id="weightLabelMaxc2"
+                           
                                 readonly
-                              />
+                              ></p>
                             </div>
                           </div>
                         </td>
@@ -1163,22 +366,15 @@
                             <div class="pt-input-group">
                               <div class="tick-slider">
                                 <input
-                                  id="clientes_c3"
-                                  class="tick-slider-pag-3"
-                                  type="number"
+                                  id="miercoles"
+                                  class="tick-slider-pag-3 validar_input clientes-dia"
+                                  type="text"
                                   min="0"
                                   max="100"
                                   step="5"
                                   value="20"
                                   data-id="3"
-                                  data-tick-step="5"
-                                  data-tick-id="weightTicks3"
-                                  data-value-id="weightValue3"
-                                  data-progress-id="weightProgress"
-                                  data-handle-size="18"
-                                  data-min-label-id="weightLabelMin3"
-                                  data-max-label-id="weightLabelMax3"
-                           
+                            
                                 />
                               </div>
                             </div>
@@ -1187,24 +383,17 @@
                           <td data-label="%*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input
-                                id="porcentaje_c3"
-                                class="tick-slider-pag-4 form-control"
-                                type="number"
+                              <p
+                                id="porcentaje-miercoles"
+                                class="tick-slider-pag-4 "
+                                type="text"
                                 min="0"
                                 max="500"
                                 step="5"
                                 data-id="3"
                                 value="100"
-                                data-tick-step="5"
-                                data-tick-id="weightTicksc3"
-                                data-value-id="weightValuec3"
-                                data-progress-id="weightProgressc3"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMinc3"
-                                data-max-label-id="weightLabelMaxc3"
-                                readonly
-                              />
+                    
+                              ></p>
                             </div>
                           </div>
                         </td>
@@ -1217,21 +406,15 @@
                             <div class="pt-input-group">
                               <div class="tick-slider">
                                 <input
-                                  id="clientes_c4"
-                                  class="tick-slider-pag-3"
-                                  type="number"
+                                  id="jueves"
+                                  class="tick-slider-pag-3 validar_input clientes-dia"
+                                  type="text"
                                   min="0"
                                   max="100"
                                   step="5"
                                   data-id="4"
                                   value="20"
-                                  data-tick-step="5"
-                                  data-tick-id="weightTicks4"
-                                  data-value-id="weightValue4"
-                                  data-progress-id="weightProgress"
-                                  data-handle-size="18"
-                                  data-min-label-id="weightLabelMin4"
-                                  data-max-label-id="weightLabelMax4"
+                   
                                  
                                 />
                               </div>
@@ -1241,24 +424,18 @@
                           <td data-label="%*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input
-                                id="porcentaje_c4"
-                                class="tick-slider-pag-4 form-control"
-                                type="number"
+                              <p
+                                id="porcentaje-jueves"
+                                class="tick-slider-pag-4 "
+                                type="text"
                                 min="0"
                                 max="500"
                                 step="5"
                                 value="100"
                                 data-id="4"
-                                data-tick-step="5"
-                                data-tick-id="weightTicksc4"
-                                data-value-id="weightValuec4"
-                                data-progress-id="weightProgressc4"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMinc4"
-                                data-max-label-id="weightLabelMaxc4"
+           
                                 readonly
-                              />
+                              ></p>
                             </div>
                           </div>
                         </td>
@@ -1271,22 +448,15 @@
                             <div class="pt-input-group">
                               <div class="tick-slider">
                                 <input
-                                  id="clientes_c5"
-                                  class="tick-slider-pag-3"
-                                  type="number"
+                                  id="viernes"
+                                  class="tick-slider-pag-3 validar_input form-control clientes-dia"
+                                  type="text"
                                   min="0"
                                   max="100"
                                   step="5"
                                   value="20"
                                   data-id="5"
-                                  data-tick-step="5"
-                                  data-tick-id="weightTicks5"
-                                  data-value-id="weightValue5"
-                                  data-progress-id="weightProgress5"
-                                  data-handle-size="18"
-                                  data-min-label-id="weightLabelMin5"
-                                  data-max-label-id="weightLabelMax5"
-                          
+                              
                                 />
                               </div>
                             </div>
@@ -1295,24 +465,16 @@
                           <td data-label="%*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input
-                                id="porcentaje_c5"
-                                class="tick-slider-pag-4 form-control"
-                                type="number"
+                              <p
+                                id="porcentaje-viernes"
+                                class="tick-slider-pag-4 "
+                                type="text"
                                 min="0"
                                 max="500"
                                 step="5"
                                 value="100"
                                 data-id="5"
-                                data-tick-step="5"
-                                data-tick-id="weightTicksc5"
-                                data-value-id="weightValuec5"
-                                data-progress-id="weightProgressc5"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMinc5"
-                                data-max-label-id="weightLabelMaxc5"
-                                readonly
-                              />
+                                     ></p>
                             </div>
                           </div>
                         </td>
@@ -1326,21 +488,15 @@
                               <div class="pt-input-group">
                                 <div class="tick-slider">
                                   <input
-                                    id="clientes_c6"
-                                    class="tick-slider-pag-3"
-                                    type="number"
+                                    id="sabado"
+                                    class="tick-slider-pag-3 validar_input clientes-dia"
+                                    type="text"
                                     min="0"
                                     max="100"
                                     step="5"
                                     data-id="6"
                                     value="0"
-                                    data-tick-step="5"
-                                    data-tick-id="weightTicks6"
-                                    data-value-id="weightValue6"
-                                    data-progress-id="weightProgress6"
-                                    data-handle-size="18"
-                                    data-min-label-id="weightLabelMin6"
-                                    data-max-label-id="weightLabelMax6"
+                            
                               
                                   />
                                 </div>
@@ -1351,24 +507,19 @@
                           <td data-label="%*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input
-                                id="porcentaje_c6"
-                                class="tick-slider-pag-4 form-control"
-                                type="number"
+                              <p
+                                id="porcentaje-sabado"
+                                class="tick-slider-pag-4 "
+                                type="text"
                                 min="0"
                                 max="500"
                                 step="5"
                                 data-id="6"
                                 value="0"
                                 data-tick-step="5"
-                                data-tick-id="weightTicksc6"
-                                data-value-id="weightValuec6"
-                                data-progress-id="weightProgressc6"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMinc6"
-                                data-max-label-id="weightLabelMaxc6"
+                            
                                 readonly
-                              />
+                              ></p>
                             </div>
                           </div>
                         </td>
@@ -1382,21 +533,15 @@
                               <div class="pt-input-group">
                                 <div class="tick-slider">
                                   <input
-                                    id="clientes_c7"
-                                    class="tick-slider-pag-3"
-                                    type="number"
+                                    id="domingo"
+                                    class="tick-slider-pag-3 validar_input  form-control clientes-dia"
+                                    type="text"
                                     min="0"
                                     max="100"
                                     step="5"
                                     value="0"
                                     data-id="7"
-                                    data-tick-step="5"
-                                    data-tick-id="weightTicks7"
-                                    data-value-id="weightValue7"
-                                    data-progress-id="weightProgress7"
-                                    data-handle-size="18"
-                                    data-min-label-id="weightLabelMin7"
-                                    data-max-label-id="weightLabelMax7"
+                                 
                              
                                   />
                                 </div>
@@ -1407,24 +552,18 @@
                           <td data-label="%*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input
-                                id="porcentaje_c7"
-                                class="form-control"
-                                type="number"
+                              <p
+                                id="porcentaje-domingo"
+                                class=""
+                                type="text"
                                 min="0"
                                 max="500"
                                 step="5"
                                 value="0"
                                 data-id="7"
-                                data-tick-step="5"
-                                data-tick-id="weightTicksc7"
-                                data-value-id="weightValuec7"
-                                data-progress-id="weightProgressc7"
-                                data-handle-size="18"
-                                data-min-label-id="weightLabelMinc7"
-                                data-max-label-id="weightLabelMaxc7"
+                           
                                 readonly
-                              />
+                              ></p>
                             </div>
                           </div>
                         </td>
@@ -1432,10 +571,10 @@
                       <tr>
                         <td>Totales</td>
                         <td>   <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input  total_clientes_semana"
                           
-                            id="clienttotal2"
+                            id="total_clientes_semana"
                       
                             aria-label=""
                             aria-describedby="basic-addon1"
@@ -1443,16 +582,15 @@
                           />
                         </td>
                         <td>
-                            <input
-                            type="number"
-                            class="form-control"
-                            readonly
-                            id="sumaTotal2"
+                            <p
+                       
+                    
+                            id="total_porcentaje_semana"
+                            class="total_porcentaje_semana"
                             value="100"                      
                             aria-label=""
                             aria-describedby="basic-addon1"
-                            readonly
-                          />
+                            >100%</p>
                         </td>
                       </tr>
                     </tbody>
@@ -1464,19 +602,14 @@
                     class="row justify-content-center align-items-lg-center"
                     style="height: 15%"
                   >
-                    <div class="col-6">
-                      <label for="tenedor_promedio2"> Tenedor promedio</label>
-                      <div class="input-group number-spinner">
-                       
+                 
                         <input
-                          type="text"
+                          type="hidden"
                           class="form-control text-right"
                           id="tenedor_promedio2"
                           value=""
                         />
-                       
-                      </div>
-                    </div>
+                     
                   </div>
 
                   <div
@@ -1530,7 +663,7 @@
                     </span>
                     <input
                       type="text"
-                      class="form-control text-center"
+                      class="form-control validar_input text-cemter"
                       id="costo_promedio"
                       value="35"
                     />
@@ -1595,11 +728,11 @@
                   <div class="input-group number-spinner">
                 
                     <input
-                      type="number"
+                      type="text"
                       min="0"
-                      class="form-control text-right"
+                      class="form-control text-right validar_input"
                       id="sueldo_promedio"
-                      placeholder="Ingrese un valor"
+                      placeholder="0"
                       value=""
                     />
                   
@@ -1616,10 +749,10 @@
                   <div class="input-group number-spinner">
                 
                     <input
-                    placeholder="Ingrese un valor"
-                      type="number"
+                    placeholder="0"
+                      type="text"
                       min="0"
-                      class="form-control text-right"
+                      class="form-control text-right validar_input"
                       id="valor_beneficio_promedio"
                       value="0"
                     />
@@ -1680,9 +813,9 @@
                             <span class="input-group-text"></span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             data-id="1"
-                            class="form-control cantidade cantidade1"
+                            class="form-control cantidade cantidade1 validar_input"
                             id="cant_cajeros"
                             value="0"
                           />
@@ -1695,7 +828,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="tsueldo1"
                             value="0"
@@ -1708,7 +841,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="tbeneficio1"
                             value="0"
@@ -1721,7 +854,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="totros1"
                             value="0"
@@ -1734,7 +867,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="ttotale1"
                             value="0"
@@ -1752,9 +885,9 @@
                             <span class="input-group-text"></span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             data-id="2"
-                            class="form-control cantidade cantidade2"
+                            class="form-control cantidade cantidade2 validar_input"
                             id="cant_cocina"
                             value="0"
                           />
@@ -1767,8 +900,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="tsueldo2"
                             value="0"
                           />
@@ -1780,8 +913,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="tbeneficio2"
                             value="0"
                           />
@@ -1793,7 +926,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="totros2"
                             value="0"
@@ -1806,8 +939,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="ttotale2"
                             value="0"
                             readonly
@@ -1825,7 +958,7 @@
                           </div>
                           <input
                             type="text"
-                            class="form-control cantidade cantidade3"
+                            class="form-control cantidade cantidade3 validar_input"
                             data-id="3"
                             id="cant_meseros"
                             value="0"
@@ -1838,7 +971,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="tsueldo3"
                             value="0"
@@ -1851,8 +984,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="tbeneficio3"
                             value="0"
                           />
@@ -1864,8 +997,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="totros3"
                             value="0"
                           />
@@ -1877,8 +1010,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="ttotale3"
                             value="0"
                             readonly
@@ -1894,9 +1027,9 @@
                             <span class="input-group-text"></span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             data-id="4"
-                            class="form-control cantidade cantidade4"
+                            class="form-control cantidade cantidade4 validar_input"
                             id="cant_administrador"
                           />
                         </div>
@@ -1907,7 +1040,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="tsueldo4"
                             value="0"
@@ -1920,8 +1053,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="tbeneficio4"
                             value="0"
                           />
@@ -1933,8 +1066,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="totros4"
                             value="0"
                           />
@@ -1946,8 +1079,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="ttotale4"
                             value="0"
                             readonly
@@ -1963,9 +1096,9 @@
                             <span class="input-group-text"></span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             data-id="5"
-                            class="form-control cantidade cantidade5"
+                            class="form-control cantidade cantidade5 validar_input"
                             id="cant_otros"
                             value="0"
                           />
@@ -1977,7 +1110,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="tsueldo5"
                             value="0"
@@ -1990,7 +1123,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="tbeneficio5"
                             value="0"
@@ -2003,8 +1136,8 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="totros5"
                             value="0"
                           />
@@ -2016,7 +1149,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="ttotale5"
                             value="0"
@@ -2030,12 +1163,12 @@
               </div>
 
               <div class="row justify-content-md-center mb-5">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-4">
                   <label for="tenedor_promedio"> Gasto empleado Mes $</label>
                   <div class="input-group number-spinner">
                
                     <input
-                      type="number"
+                      type="text"
                       class="form-control text-right"
                       id="gastos_empleados"
                       value="0"
@@ -2097,14 +1230,14 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">Arriendo Local</th>
+                      <th scope="row" class="  text-left pl-3"   >Arriendo Local</th>
                       <td>
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="gastogral1"
                             value="0"
@@ -2113,15 +1246,15 @@
                       </td>
                     </tr>
                     <tr>
-                      <th scope="row">Otros Gastos generales</th>
+                      <th scope="row" class="  text-left pl-3" >Otros Gastos generales</th>
                       <td>
                         <div class="input-group mb-3">
                           <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
-                            class="form-control"
+                            type="text"
+                            class="form-control validar_input"
                             id="gastogral2"
                             value="0"
                           />
@@ -2130,19 +1263,9 @@
                     </tr>
 
                     <tr>
-                      <td>
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"> </span>
-                          </div>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="textotrogastosg2"
-                            value="Internet"
-                          />
-                        </div>
-                      </td>
+                      <th  class="  text-left pl-3" >
+                        Internet
+                      </th>
 
                       <td>
                         <div class="input-group mb-3">
@@ -2150,7 +1273,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="gastogral3"
                             value="0"
@@ -2159,19 +1282,9 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>
-                        <div class="input-group mb-3">
-                          <div class="input-group-prepend">
-                            <span class="input-group-text"></span>
-                          </div>
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="textotrogastosg3"
-                            value="Otros"
-                          />
-                        </div>
-                      </td>
+                      <th class="  text-left pl-3" >
+                      Otros
+                      </th>
 
                       <td>
                         <div class="input-group mb-3">
@@ -2179,7 +1292,7 @@
                             <span class="input-group-text">$</span>
                           </div>
                           <input
-                            type="number"
+                            type="text"
                             class="form-control"
                             id="gastogral4"
                             value="0"
@@ -2245,7 +1358,7 @@
                 <div class="col-xs-12 col-md-6">
                   <div
                     class="imagen-grafico-chartplanfinanciero d-flex flex-row"
-                    style="position: relative; height: 45vh; width: 35vw"
+                    style="position: relative; height: 45vh; width: 30vw"
                   >
                     <canvas id="chartplanfinanciero"></canvas>
                   </div>

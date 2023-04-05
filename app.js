@@ -36,7 +36,7 @@ var btn_gatos_empleado =  document.querySelector(".btn_gatos_empleado");
 var sueldo_promedio_finalInput = document.getElementById("sueldo_promedio_final").value;
 cgastos_empleadosInput.addEventListener("change", change_input_empleado);
 const inputs_clienttotal = document.getElementById("clienttotal");
-const inputs_clienttotal_2 = document.getElementById("clienttotal2");
+const inputs_clienttotal_2 = document.getElementById("total_clientes_semana");
 //inputs_clienttotal.addEventListener("keyup", event_input_total_semanal);
 inputs_clienttotal_2.addEventListener("keyup", event_input_total_semanal2);
 
@@ -58,7 +58,7 @@ for (var i = 0; i < campos.length; i++) {
 
     // Establecemos la suma total en el campo de entrada con el id "clienttotal"
     document.querySelector("#clienttotal").value = total;
-    document.querySelector("#clienttotal2").value = total;
+    document.querySelector("#total_clientes_semana").value = total;
   });
 }
 
@@ -83,8 +83,9 @@ const camposRangeArraygatos_g = Array.from(inputs_gatos_g);
 ///Obtener todos los input de clientes y porcentaje
 const clientes2 = document.querySelectorAll('input[id^="clientes_c"]');
 const camposRangeArrayClientes2 = Array.from(clientes2);
-const porcentajes2 = document.querySelectorAll('input[id^="porcentaje_c"]');
+const porcentajes2 = document.querySelectorAll('input[id^="porcentaje-"]');
 const camposRangeArrayPorcentaje = Array.from(porcentajes2);
+
 // Obtener el input de total de clientes y asignar evento de cambio
 const totalClientes = document.querySelector("#clienttotal");
 const totalClientes2 = document.querySelector("#clienttotal2");
@@ -92,15 +93,12 @@ const totalClientes2 = document.querySelector("#clienttotal2");
 //totalClientes2.addEventListener("change", actualizarPorcentajeTabla_2);
 // Asignar evento de cambio para cada input de clientes y porcentaje
 
-
+/*
 for (let i = 0; i < clientes2.length; i++) {
   //clientes[i].addEventListener("change", actualizarPorcentaje);
   clientes2[i].addEventListener("keyup", actualizarPorcentajeTabla_2);
- /* if (porcentajes[i]) {
-    porcentajes[i].addEventListener("keyup", actualizarCliente);
-    porcentajes2[i].addEventListener("keyup", actualizarClienteTabla2);
-  }*/
-}
+ 
+}*/
 
 // Asignar el evento "input" a cada campo de entrada
 
@@ -138,6 +136,12 @@ const chart = new Chart(ctx, {
     ],
   },
   options: {
+    plugins: {
+    legend: {
+      display: false,
+    },
+  },
+    
     scales: {
       y: {
         beginAtZero: true,
@@ -464,7 +468,7 @@ function nextForm() {
      */
   } else if (viewId === 4) {
     const consumoPromedio = document.querySelector("#tenedor_promedio2").value;
-    const clienttotal = document.querySelector("#clienttotal2").value;
+    const clienttotal = document.querySelector("#total_clientes_semana").value;
     const meta_alcanzada = clienttotal * consumoPromedio * SEMANAS_MES;
   document.querySelector("#objetivo_mensual").value=Math.round(meta_alcanzada);
   document.querySelector(".tenedor_promedio_p9").innerHTML= "$"+consumoPromedio ;
@@ -621,6 +625,8 @@ calcula_totales_empleados()
 
 function enableIconClicks() {
   icons.forEach((icon, index) => {
+    icon.style.cursor='pointer';
+
     icon.addEventListener('click', function() {
       // Suma 1 al índice, ya que viewId comienza desde 1
       goToForm(index + 1);
@@ -639,7 +645,7 @@ function goToForm(formIndex) {
 function click_tenedor_promedio() {
   const tenenedo_promedio_2 =
     document.getElementById("tenedor_promedio2").value;
-  const clienttotal = document.querySelector("#clienttotal2").value;
+  const clienttotal = document.querySelector("#total_clientes_semana").value;
   const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
   const consumoPromedio = tenenedo_promedio_2;
   const meta_alcanzada = clienttotal * consumoPromedio * SEMANAS_MES;
@@ -647,7 +653,7 @@ function click_tenedor_promedio() {
 }
 
 function event_tenedor_promedio(event) {
-  const clienttotal = document.querySelector("#clienttotal2").value;
+  const clienttotal = document.querySelector("#total_clientes_semana").value;
   const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
   const consumoPromedio = event.target.value;
   const meta_alcanzada = clienttotal * consumoPromedio * SEMANAS_MES;
@@ -872,31 +878,16 @@ function actualizarTotalesSumaCampos(id_campo_actual) {
     if (id_campo_actual !== campo.dataset.id) {
       const porcentaje = Math.round((campo.value * 100) / clienttotal.value);
 
-      const porcentajeInput = document.querySelector(
-        "#porcentaje_m" + campo.dataset.id
-      );
+  
       const porcentajeInputc = document.querySelector(
         "#porcentaje_c" + campo.dataset.id
       );
       porcentajeInput.value = porcentaje;
-      porcentajeInput.oninput = onSliderInput;
 
-      porcentajeInputc.value = porcentaje;
-      porcentajeInputc.oninput = onSliderInput;
 
-      updateValue(porcentajeInput);
-      updateValuePosition(porcentajeInput);
-      updateLabels(porcentajeInput);
-      updateProgress(porcentajeInput);
-      setTicks(porcentajeInput);
-      porcentajeInput.oninput = onSliderInput;
+      porcentajeInputc.textContent  = porcentaje;
 
-      updateValue(porcentajeInputc);
-      updateValuePosition(porcentajeInputc);
-      updateLabels(porcentajeInputc);
-      updateProgress(porcentajeInputc);
-      setTicks(porcentajeInputc);
-      porcentajeInputc.oninput = onSliderInput;
+
     }
     actualizarSumaCampos();
   }
@@ -912,11 +903,10 @@ function actualizar_tabla_paso_4() {
     ).value;
 
     document.getElementById("clientes_c" + index).value = valor_cliente_1;
-    document.getElementById("porcentaje_c" + index).value =
-      porcentaje_cliente_1;
+    document.getElementById("porcentaje_c" + index).textContent  = porcentaje_cliente_1;
   }
   var sumaTotal = document.getElementById("sumaTotal").value;
-  document.getElementById("sumaTotal2").value = sumaTotal;
+  document.getElementById("sumaTotal2").textContent  = sumaTotal;
 
   var clienttotal = document.getElementById("clienttotal").value;
   document.getElementById("clienttotal2").value = clienttotal;
@@ -1013,7 +1003,7 @@ function actualizar_rentabilidad() {
   document.querySelector(".valor_ganancia2").innerHTML = rentabilidad;
   document.querySelector(".valor_ganancia3").innerHTML = rentabilidad;
   valor_ganancia.innerHTML = `${rentabilidad}`;
-  valor_venta.innerHTML = ` ${rentabilidad * 5}`;
+  valor_venta.innerHTML = `${rentabilidad * 5}`;
 }
 
 function actualizarClienteTabla2(event) {
@@ -1041,7 +1031,7 @@ function actualizarClienteTabla2(event) {
     (acumulador, campo) => acumulador + parseInt(campo.value),
     0
   );
-  sumaCamposElement.value = Math.round(sumaValores);
+  sumaCamposElement.text = Math.round(sumaValores);
 
   const consumoPromedio = document.getElementById("tenedor_promedio2");
   const SEMANAS_MES = 4;
@@ -1077,104 +1067,76 @@ function actualizarClienteTabla2(event) {
   }
 }
 
-function actualizarPorcentajeTabla_2(event) {
-  console.log(" function actualizarPorcentajeTabla_2");
-
-  const valorporcentaje = parseInt(event.target.value);
-  const sumaValoresClientes = camposRangeArrayClientes2.reduce((acumulador, campo) => {
-    const valorCampo = parseInt(campo.value);
-    if (!isNaN(valorCampo)) {
-      return acumulador + valorCampo;
-    } else {
-      return acumulador;
-    }
-  }, 0);
-  console.log(sumaValoresClientes)
-  
-  const sumaCamposElementCliente = document.getElementById("clienttotal2");
-  sumaCamposElementCliente.value = Math.ceil(sumaValoresClientes);
-
-  const sumaCamposElement = document.getElementById("sumaTotal2");
-  const consumoPromedio = document.getElementById("tenedor_promedio2");
-  const SEMANAS_MES = 4;
-  const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
-  const meta_alcanzada = sumaCamposElementCliente.value * consumoPromedio.value * SEMANAS_MES;
-
-  actualizarGrafico(metaVentasMensual, meta_alcanzada);
-  for (let campo of camposRangeArrayClientes2) {
-    const porcentaje = Math.ceil((valorporcentaje / sumaCamposElementCliente.value) * 100);
- 
-
-    const porcentajeInput_2 = document.querySelector("#porcentaje_c" + event.target.dataset.id);
-
-    if(porcentajeInput_2)
-    porcentajeInput_2.value = porcentaje;
-
-    // Actualizar el elemento HTML que muestra la suma
-
-    if (event.target.dataset.id !== campo.dataset.id) {
-      const porcentaje = Math.ceil((campo.value * 100) / totalClientes2.value);
- 
-
-      const porcentajeInputc = document.querySelector(
-        "#porcentaje_c" + campo.dataset.id
-      );
-      if(porcentajeInputc)
-      porcentajeInputc.value = porcentaje;
-    }
+async function calcularTotales(inputs) {
+  let suma = 0;
+  for (const input of inputs) {
+    console.log(input.id,input.value)
+    const valor = parseInt(input.value) || 0;
+    suma += valor;
   }
+  console.log(suma)
+  return suma;
+}
 
-  const sumaValores = camposRangeArray2.reduce(
-    (acumulador, campo) => acumulador + parseInt(campo.value),
-    0
-  );
-  sumaCamposElement.value = Math.ceil(sumaValores);
+// Calculo de porcentajes
+async function calcularPorcentajes(inputs, suma) {
+  let total_porcentaje = 0;
+  for (const input of inputs) {
+    const valor = parseInt(input.value) || 0;
+    const porcentaje = (valor / suma) * 100;
 
-  // Verificar si la suma es mayor a 100
-  if (sumaValores > 100) {
+    const idPorcentaje = "porcentaje-" + input.id;
+
+  total_porcentaje += parseFloat(isNaN(porcentaje) ? 0 : porcentaje.toFixed(2));
+   document.getElementById(idPorcentaje).textContent = isNaN(porcentaje) ? "0%" : porcentaje.toFixed(0) + "%";
+  }
+  return total_porcentaje;
+}
+// Función principal para calcular totales y porcentajes
+async function calcular() {
+
+  const totalClientesSemana = document.getElementById("total_clientes_semana");
+  const totalPorcentajeSemana = document.getElementById("total_porcentaje_semana");
+  var inputsc = document.querySelectorAll(".clientes-dia");
+  const suma = await calcularTotales(inputsc);
+  totalClientesSemana.value = suma;
+
+  const total_porcentaje = await calcularPorcentajes(inputsc, suma);
+  totalPorcentajeSemana.textContent = Math.round(total_porcentaje) + "%";
+
+  const SEMANAS_MES = 4;
+  const consumoPromedio = document.getElementById("tenedor_promedio");
+  const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
+  const meta_alcanzada =suma * consumoPromedio.value * SEMANAS_MES;
+
+  console.log(metaVentasMensual, meta_alcanzada)
+  actualizarGrafico(metaVentasMensual, meta_alcanzada);
+
+  if (meta_alcanzada < metaVentasMensual) {
     VALIDACION.pasa=false;
-    VALIDACION.msg= "La suma de los campos  de porcentaje no puede ser mayor a 100% <br> Puedes ajustar el porcetaje segun se requiera";
-
     mostrarEmoji(
       false,
-      "La suma de los campos  de porcentaje no puede ser mayor a 100% <br> Puedes ajustar el porcetaje segun se requiera"
-    );
-    //alert('La suma de los campos no puede ser mayor a 100');
-  } else if (meta_alcanzada < metaVentasMensual) {
-    VALIDACION.pasa=false;
-    mostrarEmoji(
-      false,
-      "Incrementa el numerero de clientes  por dia para alcanzar tu objetivo"
+      "Incrementa el numero de clientes  por dia para alcanzar tu objetivo"
     );
   } else {
     VALIDACION.pasa=true;
     mostrarEmoji(true);
   }
-}
-// Función para actualizar el porcentaje correspondiente al input de clientes
-function actualizarPorcentaje(event) {
-  const valorCliente = parseInt(event.target.value);
 
-  const porcentaje = Math.round((valorCliente / totalClientes.value) * 100);
-  const porcentajeInput = document.querySelector(
-    "#porcentaje_m" + event.target.dataset.id
-  );
-  const porcentajeInput_2 = document.querySelector(
-    "#porcentaje_c" + event.target.dataset.id
-  );
-  porcentajeInput.value = porcentaje;
-  porcentajeInput_2.value = porcentaje;
 
-  porcentajeInput.oninput = onSliderInput;
-  updateValue(porcentajeInput);
-  updateValuePosition(porcentajeInput);
-  updateLabels(porcentajeInput);
-  updateProgress(porcentajeInput);
-  setTicks(porcentajeInput);
-  porcentajeInput.oninput = onSliderInput;
-  actualizarSumaCampos();
-  actualizarTotalesSumaCampos(event.target.dataset.id);
+
 }
+
+const inputsc = document.querySelectorAll(".clientes-dia");
+
+// Agregar event listener a cada input con la clase "clientes-dia"
+inputsc.forEach((input) => {
+  input.addEventListener("keyup", calcular);
+});
+
+
+
+
 
 // Función para actualizar el valor de clientes correspondiente al input de porcentaje
 function actualizarCliente(event) {
@@ -1222,7 +1184,7 @@ function calcularClientesPorDia(consumoPromedio, metaVentasMensual) {
   const totalClientesSemana = clientesPorDiaRedondeado * DIAS_LABORABLES_SEMANA;
   const porcentaje = (clientesPorDiaRedondeado * 100) / totalClientesSemana;
   //document.querySelector("#clienttotal").value = totalClientesSemana;
-  document.querySelector("#clienttotal2").value = totalClientesSemana;
+  document.querySelector("#total_clientes_semana").value = totalClientesSemana;
 
   console.log("porcentaje" + porcentaje);
   console.log("clientesPorDiaRedondeado" + clientesPorDiaRedondeado);
@@ -1232,17 +1194,21 @@ function calcularClientesPorDia(consumoPromedio, metaVentasMensual) {
   document.getElementById("clientes_l4").value = clientesPorDiaRedondeado;
   document.getElementById("clientes_l5").value = clientesPorDiaRedondeado;*/
 
-  document.getElementById("clientes_c1").value = clientesPorDiaRedondeado;
-  document.getElementById("clientes_c2").value = clientesPorDiaRedondeado;
-  document.getElementById("clientes_c3").value = clientesPorDiaRedondeado;
-  document.getElementById("clientes_c4").value = clientesPorDiaRedondeado;
-  document.getElementById("clientes_c5").value = clientesPorDiaRedondeado;
+  document.getElementById("lunes").value = clientesPorDiaRedondeado;
+  document.getElementById("martes").value = clientesPorDiaRedondeado;
+  document.getElementById("miercoles").value = clientesPorDiaRedondeado;
+  document.getElementById("jueves").value = clientesPorDiaRedondeado;
+  document.getElementById("viernes").value = clientesPorDiaRedondeado;
+  //hacer todos los input de porcentaje
+  document.getElementById("porcentaje-lunes").textContent  = porcentaje+"%";
+  document.getElementById("porcentaje-martes").textContent  = porcentaje+"%";
+  document.getElementById("porcentaje-miercoles").textContent  = porcentaje+"%";
+  document.getElementById("porcentaje-jueves").textContent  = porcentaje+"%";
+  document.getElementById("porcentaje-viernes").textContent  = porcentaje+"%";
+  document.getElementById("porcentaje-sabado").textContent  =  "0%";
+  document.getElementById("porcentaje-domingo").textContent  = "0%";
 
-  document.getElementById("porcentaje_c1").value = porcentaje;
-  document.getElementById("porcentaje_c2").value = porcentaje;
-  document.getElementById("porcentaje_c3").value = porcentaje;
-  document.getElementById("porcentaje_c4").value = porcentaje;
-  document.getElementById("porcentaje_c5").value = porcentaje;
+
   const meta_alcanzada = totalClientesSemana * consumoPromedio * SEMANAS_MES;
  actualizarGrafico(metaVentasMensual, meta_alcanzada);
   /*for (let index = 1; index < 6; index++) {
@@ -1663,6 +1629,20 @@ function eliminar_fila_gasto(fila) {
   calcula_totales_gastos()
 }
 
+const inputs = document.querySelectorAll('.validar_input');
+
+inputs.forEach((input) => {
+  input.addEventListener('keyup', (event) => {
+    // Obtener el valor actual del input
+    const currentValue = event.target.value;
+
+    // Remover cualquier caracter que no sea un número
+    const sanitizedValue = currentValue.replace(/[^0-9]/g, '');
+
+    // Actualizar el valor del input con el valor sanitizado
+    event.target.value = sanitizedValue;
+  });
+});
 
 function calcula_totales_gastos() {
   console.log('function calcula_totales_gastos')
@@ -1691,16 +1671,16 @@ function event_input_total_semanal(){
 function event_input_total_semanal2(event){
   console.log('event_input_total_semanal2')
    const  clienttotal2 =event.target.value;
+   const porcentajes = document.querySelectorAll('p[id^="porcentaje-"]');
+porcentajes.forEach((elemento) => {
+      id_dia_semana=  elemento.id.split("-")[1];
+      const numero_clientes = Math.ceil(( parseInt(elemento.textContent) * clienttotal2) / 100);
+    document.querySelector("#"+id_dia_semana).value = numero_clientes;
 
-  for (let campo of camposRangeArrayPorcentaje) {
-   
-      const porcentaje = Math.ceil((campo.value * clienttotal2) / 100);
-      console.log(campo.value )
+     // const porcentajeInput_c = document.querySelector("#clientes_c" + campo.dataset.id);
 
-      const porcentajeInput_c = document.querySelector("#clientes_c" + campo.dataset.id);
-
-      porcentajeInput_c.value = porcentaje;
-    }
+      //porcentajeInput_c.value = porcentaje;
+    });
 
     const SEMANAS_MES = 4;
     const consumoPromedio = document.getElementById("tenedor_promedio2");
@@ -1714,7 +1694,7 @@ function event_input_total_semanal2(event){
       VALIDACION.pasa=false;
       mostrarEmoji(
         false,
-        "Incrementa el numerero de clientes  por dia para alcanzar tu objetivo"
+        "Incrementa el numero de clientes  por dia para alcanzar tu objetivo"
       );
     } else {
       VALIDACION.pasa=true;
