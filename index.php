@@ -44,7 +44,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=1.0.1" />
+    <link rel="stylesheet" href="style.css?v=1.0.2" />
 
     <style>
       body {
@@ -1443,7 +1443,7 @@
       const nxtBtn = document.querySelector("#submitBtn");
     </script>
 
-    <script src="app.js?v=1.0.1"></script>
+    <script src="app.js?v=1.0.2"></script>
 
     <script type="text/javascript" src="#"
     >
