@@ -138,6 +138,19 @@ input {
   background-color: #c53b0d;
 }
 
+.info-btn {
+  color: white;
+  background-color: #3954ec;
+  padding: 0.9em 1.4em;
+  border: 0;
+  border-radius: var(--radius-2);
+  cursor: pointer;
+}
+.info-btn:hover {
+  background-color: #0d91c5;
+}
+
+
 .sr-only {
   position: absolute;
   margin: -1px;

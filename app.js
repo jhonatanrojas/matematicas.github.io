@@ -391,7 +391,7 @@ function click_actulizar_text_grafico(label) {
     $(".titulo-porcentaje").html(porcentaje_gasto +"%")
     $(".titulo-cantidad").html("$"+total_gasto_general)
   }else if(label=="Gastos de personal"){
-    $(".titulo_utilidad").html("Gastos de perosonal")
+    $(".titulo_utilidad").html("Gastos de personal")
     $(".titulo-porcentaje").html(porcentaje_gasto_personal+"%")
     $(".titulo-cantidad").html("$"+gastos_empleados)
   
@@ -403,6 +403,16 @@ function click_actulizar_text_grafico(label) {
 
 }
 /***GEFIC */
+   ///Obtener todos los input d
+   const input_sueldos = document.querySelectorAll('input[id^="tsueldo"]');
+   const input_beneficios = document.querySelectorAll('input[id^="tbeneficio"]');
+   const input_otros = document.querySelectorAll('input[id^="totros"]');
+   const input_cant_pers = document.querySelectorAll('.cantidade');
+   const camposRangeArraysueldos = Array.from(input_sueldos);
+   const camposRangeArraybeneficios = Array.from(input_beneficios);
+   const camposRangeArrayotros = Array.from(input_otros);
+   const camposRangeArraycant = Array.from(input_cant_pers);
+
 function nextForm() {
   viewId++;
 
@@ -516,15 +526,7 @@ const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
 const input_gastos_empleados=  document.querySelector("#gastos_empleados");
 var sueldo_promedio_base = parseInt(document.querySelector("#sueldo_promedio").value);
 
-   ///Obtener todos los input d
-const input_sueldos = document.querySelectorAll('input[id^="tsueldo"]');
-const input_beneficios = document.querySelectorAll('input[id^="tbeneficio"]');
-const input_otros = document.querySelectorAll('input[id^="totros"]');
-const input_cant_pers = document.querySelectorAll('.cantidade');
-const camposRangeArraysueldos = Array.from(input_sueldos);
-const camposRangeArraybeneficios = Array.from(input_beneficios);
-const camposRangeArrayotros = Array.from(input_otros);
-const camposRangeArraycant = Array.from(input_cant_pers);
+
 
 for (let campo of camposRangeArraysueldos) {
  campo.addEventListener("input", evento_inputs_personal);
@@ -583,8 +585,11 @@ document.getElementById("cant_administrador").value = cant_administradores;
 document.getElementById("tsueldo4").value=  parseInt(cant_administradores * sueldo_promedio_base);
 document.getElementById("tbeneficio4").value=  parseInt(cant_administradores * valor_beneficio);
 calcula_totales_empleados()
-  }
-  else if (viewId === 7) {
+      
+/**
+ * Paso 7
+ */
+  }else if (viewId === 7) {
 
     var ventasMensual = document.querySelector("#objetivo_mensual").value;
     const gasto_maximo = Math.floor((20 * ventasMensual) /100);
@@ -599,16 +604,96 @@ calcula_totales_empleados()
     document.querySelector("#gastogral4").value=gastos_restante;
     document.querySelector("#total_gasto_general").value=gasto_maximo;
 
+    var costo_promedio=  $("#costo_promedio").val()
+    var total_gasto_general=  $("#total_gasto_general").val()
+    var gastos_empleados=  document.getElementById("gastos_empleados").value; 
+    const objetivo_mensual  = document.querySelector("#objetivo_mensual").value;
+    const tenedor_promedio = document.getElementById("tenedor_promedio").value;
+
+    var porcentaje_gasto=  Math.floor((total_gasto_general*100) / objetivo_mensual);
+    var porcentaje_gasto_personal=  Math.floor((gastos_empleados*100) / objetivo_mensual);
+    var porcentaje_utilidad = 100 - porcentaje_gasto_personal-porcentaje_gasto-costo_promedio;
+    var monto_utilidad = Math.floor((porcentaje_utilidad * objetivo_mensual) /100);
+
+  document.querySelector("input[name='form_objetivo']").value         = ventasMensual;
+  document.querySelector("input[name='form_utilidad']").value         = monto_utilidad;
+  const total_clientes_semana= document.querySelector("#total_clientes_semana").value;
+  document.querySelector("#form_gasto_general").value    = total_gasto_general;
+  document.querySelector("#form_gasto_personal").value   = gastos_empleados;
+  document.querySelector("#form_tenedor_promedio").value = tenedor_promedio;
+  document.querySelector("#form_costo").value            = costo_promedio;
+  document.querySelector("#form_costo").value            = costo_promedio;
+ const clientes_mes = total_clientes_semana * 4;
+ document.querySelector("#clientes_mes").value =clientes_mes;
   
+    console.log('tenedor_promedio'+tenedor_promedio,'gastos_empleados'+gastos_empleados,'total_gasto_general'+total_gasto_general,'monto_utilidad'+monto_utilidad)
 
-    
 
 
+    const form_login = document.getElementById('form-login');
+    const tabla_empleados = document.getElementById('tabla-empleados');
+      // Obtener los datos de la tabla
+  const datosTabla = [];
+  let id=1;
+  const filas = tabla_empleados.rows;
+  for (let i = 1; i < filas.length; i++) {
+    const celdas = filas[i].cells;
+    const tipoEmpleado = celdas[0].textContent;
+    const cantidad = celdas[1].querySelector('input').value;
+    const sueldo = celdas[2].querySelector('input').value;
+    const beneficios = celdas[3].querySelector('input').value;
+    const otros = celdas[4].querySelector('input').value;
+    const total = celdas[5].querySelector('input').value;
+
+    const empleado = {
+      id,
+      tipoEmpleado,
+      cantidad,
+      sueldo,
+      beneficios,
+      otros,
+      total
+    };
+    id++
+    datosTabla.push(empleado);
+  }
+
+  // Almacenar los datos en el campo de formulario oculto
+  const datosTablaString = JSON.stringify(datosTabla);
+  const datosTablaInput = document.getElementById('datosTablaempleado');
+  datosTablaInput.value = datosTablaString;
    /**
      * PASO 8
      */
   }  else if (viewId === 8) {
-    actualizarGrafico_final()
+    actualizarGrafico_final();
+
+    const tabla_gasto_general = document.getElementById('tabla_gasto_general');
+    const filas_gasto_general = tabla_gasto_general.getElementsByTagName('tr');
+    const datos_gasto_general = [];
+    
+    // Recorrer todas las filas de la tabla y obtener los datos
+    for (let i = 1; i < filas_gasto_general.length; i++) {
+      const descripcion = filas_gasto_general[i].getElementsByTagName('th')[0].textContent.trim();
+      const valor_mes = parseFloat(filas_gasto_general[i].querySelector('input').value);
+      
+      // Almacenar los datos en un objeto
+      const datos = {
+        descripcion: descripcion,
+        valor_mes: valor_mes
+      };
+      
+      datos_gasto_general.push(datos);
+    }
+    
+    // Convertir el objeto en una cadena JSON
+    const datos_gasto_general_json = JSON.stringify(datos_gasto_general);
+    
+    // Almacenar la cadena JSON en un campo de formulario oculto
+    const campo_datos_gasto_general = document.getElementById('campo_datos_gasto_general');
+    campo_datos_gasto_general.value = datos_gasto_general_json;
+
+
     $('.nxt__btn').hide();
     enableIconClicks();
   }else if(viewId == 9){
