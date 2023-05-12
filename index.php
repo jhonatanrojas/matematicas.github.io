@@ -61,16 +61,16 @@
           </div>
           <div class="title__name">
             <h3>Tenedor promedio</h3>
-            <p class="In text-muted">promedio de consumo por cliente</p>
+            <p class="In text-muted">Promedio de consumo por cliente</p>
           </div>
           <div class="title__name">
             <h3>Objetivos de clientes</h3>
-            <p class="In text-muted">Calculo de clientes por dia</p>
+            <p class="In text-muted">Calculo de clientes por día</p>
           </div>
 
           <div class="title__name">
             <h3>Porcentaje de costo</h3>
-            <p class="In text-muted">Costos de tu restaurant</p>
+            <p class="In text-muted">Costos de tu restaurante</p>
           </div>
           <div class="title__name text-dark">
             <h3>Sueldo mensual típico</h3>
@@ -78,11 +78,11 @@
           </div>
           <div class="title__name text-dark">
             <h3>Cantidad de personal</h3>
-            <p class="In text-muted">proyectar cantidad de empleados</p>
+            <p class="In text-muted">Proyectar cantidad de empleados</p>
           </div>
           <div class="title__name">
             <h3>Gastos generales</h3>
-            <p class="text-muted">Clacula tus gatos</p>
+            <p class="text-muted">Calcula tus gastos</p>
           </div>
           <div class="title__name">
             <h3>Plan financiero</h3>
@@ -197,7 +197,7 @@
             <p text-muted>
               Para entender cómo llegas a $<span class="valor_ganancia3"></span>
               al mes, puedes manejar el tenedor promedio de tu carta y el
-              volumen de personas que atiendes por dia en tu local. Aquí abajo
+              volumen de personas que atiendes por día en tu local. Aquí abajo
               puedes simular esto y ver el resultado.
             </p>
           </div>
@@ -210,7 +210,7 @@
                 <table style="padding-bottom: 0px" class="table">
                   <thead class="thead-dark">
                     <th></th>
-                    <th>Clientes por dia</th>
+                    <th>Clientes por día</th>
                     <th>% de clientes a la semana</th>
                   </thead>
                   <tbody>
@@ -374,8 +374,8 @@
                     </tr>
                     <tr>
                       <td>Totales</td>
-                      <td> <input type="text" class="form-control validar_input  total_clientes_semana"
-                          id="total_clientes_semana" aria-label="" aria-describedby="basic-addon1" />
+                      <td> <input type="text" class="form-control  validar_input  total_clientes_semana"
+                          id="total_clientes_semana" value="0" />
                       </td>
                       <td>
                         <p id="total_porcentaje_semana" class="total_porcentaje_semana" value="100" aria-label=""
@@ -862,7 +862,7 @@
             </button>
             <div class="row justify-content-md-center mb-5">
               <div class="col-xs-12 col-md-6">
-                <label for="tenedor_promedio"> Gatos $</label>
+                <label for="tenedor_promedio"> Gastos $</label>
                 <div class="input-group number-spinner">
 
                   <input type="text" class="form-control text-center" id="total_gasto_general" value="0" readonly />
@@ -902,7 +902,7 @@
 
               <div class="col-xs-12 col-md-6">
                 <div class="row justify-content-md-center mb-5 pl-4">
-                  <div class="col-md-6 col-xs-12">
+                  <div class="col-md-6 col-xs-12" style="margin-left: 20%;">
                     <h2 class="titulo_utilidad">Tu Utilidad</h2>
                     <h2 class="form-porcentaje titulo-porcentaje">18%</h2>
                     <h2 class="form-porcentaje titulo-cantidad">$4,200</h2>
