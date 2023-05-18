@@ -1,0 +1,231 @@
+/* Establece el ancho del grid en dispositivos móviles */
+@media (max-width: 768px) {
+    .sub__title__container h2 {
+
+        font-size: 1.2rem;
+    }
+
+    input[type=text],input[type=number], select, textarea{
+        width: 100%;
+      
+        height: calc(2em + 1rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        background-color: #fff;
+     
+        box-sizing: border-box;
+        resize: vertical;
+        border: 2px solid #06b4d7;
+        text-align: end;
+        border-radius: 0;
+    
+       
+      }
+
+  .container-grid {
+    grid-template-columns: 1fr; /* Una columna de ancho completo */
+  }
+  .title__container {
+    margin: auto;
+  }
+  .titulo-principal {
+    color: #333333;
+    border-right: 0px solid #fff;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .subtitulo-principal {
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    width: 300px;
+    padding-top: 5px;
+  }
+
+  .header-icon.active {
+    display: block;
+  }
+  .header-icon-principal.active {
+    display: none;
+  }
+  .imagen-grafico-chartplanfinanciero {
+    position: relative;
+   
+    width: 90vw;
+  }
+  #tabla-empleados,
+  #tabla-empleados thead,
+  #tabla-empleados tbody,
+  #tabla-empleados th,
+  #tabla-empleados td,
+  #tabla-empleados tr {
+    display: block;
+  }
+
+  #tabla-empleados thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #tabla-empleados tr td:first-child,
+  #tabla-empleados tr td:last-child {
+    background-color: #e9ecef;
+  }
+  #tabla-empleados tr {
+    padding-bottom: 10px;
+  }
+
+  #tabla-empleados tr {
+    border: 1px solid #ccc;
+  }
+
+  #tabla-empleados td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  #tabla-empleados td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /* Etiquetas para cada celda */
+
+  #tabla-empleados td:nth-of-type(2):before {
+    content: "Cantidad";
+  }
+  #tabla-empleados td:nth-of-type(3):before {
+    content: "Sueldo US$";
+  }
+  #tabla-empleados td:nth-of-type(4):before {
+    content: "Beneficios US$";
+  }
+  #tabla-empleados td:nth-of-type(5):before {
+    content: "Otros US$";
+  }
+  #tabla-empleados td:nth-of-type(6):before {
+    content: "Total US$";
+  }
+
+  body {
+    background-color: var(--primary-color);
+  }
+  .imagen-grafico, .imagen-grafico-costo {
+   
+    width: 80vw;
+    position: relative;
+  }
+
+  .header-content {
+    position: relative;
+  }
+  .nxt__btn {
+    width: 50%;
+  }
+  .prev__btn {
+    width: 50%;
+  }
+
+  .form__container {
+    margin: 0px;
+    padding: 20px 0px;
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+
+  .body__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .right__container {
+    width: 90%;
+    margin: 0;
+  }
+
+  .title__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+  }
+
+  .left__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .buttons {
+    justify-content: space-between;
+  }
+
+  .descriptionTitle h3 {
+    font-size: 1rem;
+  }
+
+  .descriptionTitle p {
+    font-size: 0.6rem;
+  }
+
+  .side__titles {
+    display: none;
+    flex-direction: row;
+    /* align-items: center;  */
+    justify-content: space-evenly;
+  }
+
+  .title__name h3 {
+    font-size: 0.75rem;
+  }
+
+  .title__name p {
+    font-size: 0.5rem;
+  }
+
+  .progress__bar__container {
+    margin-bottom: 0;
+  }
+
+  .progress__bar__container ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+
+    padding: 0 2rem;
+  }
+
+  .progress__bar__container ul li {
+    margin: 10px;
+    padding: 10px;
+  }
+  .progress__bar__container ul li ion-icon {
+    display: none;
+  }
+
+  .progress__bar__container ul li::before {
+    transform: rotate(90deg);
+    height: 9vh;
+  }
+
+  li.active,
+  li.pactual {
+    background-color: #06b4d7;
+    color: white;
+  }
+}

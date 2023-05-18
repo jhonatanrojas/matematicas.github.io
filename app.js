@@ -24,10 +24,38 @@ const iconIds = [
   "#icon7",
   "#icon8",
 ];
+const iconClass = [
+  ".icon1",
+  ".icon2",
+  ".icon3",
+  ".icon4",
+  ".icon5",
+  ".icon6",
+  ".icon7",
+  ".icon8",
+  
+];
+
+const iconpClass = [
+  ".iconp1",
+  ".iconp2",
+  ".iconp3",
+  ".iconp4",
+  ".iconp5",
+  ".iconp6",
+  ".iconp7",
+  ".iconp8",
+  
+];
+
 const SEMANAS_MES = 4;
-let viewId = 1;
-const forms = formIds.map((id) => document.querySelector(id));
-const icons = iconIds.map((id) => document.querySelector(id));
+let viewId        = 1;
+const forms       = formIds.map((id) => document.querySelector(id));
+const icons       = iconIds.map((id) => document.querySelector(id));
+const iconsCl     = iconClass.map((id)=>document.querySelector(id));
+const iconsp      = iconpClass.map((id)=>document.querySelector(id));
+
+
 var VALIDACION = {
   pasa: true,
   msg: "",
@@ -117,26 +145,7 @@ const camposRangeArrayPorcentaje = Array.from(porcentajes2);
 // Obtener el input de total de clientes y asignar evento de cambio
 const totalClientes = document.querySelector("#clienttotal");
 const totalClientes2 = document.querySelector("#clienttotal2");
-//totalClientes.addEventListener("change", actualizarPorcentajes);
-//totalClientes2.addEventListener("change", actualizarPorcentajeTabla_2);
-// Asignar evento de cambio para cada input de clientes y porcentaje
 
-/*
-for (let i = 0; i < clientes2.length; i++) {
-  //clientes[i].addEventListener("change", actualizarPorcentaje);
-  clientes2[i].addEventListener("keyup", actualizarPorcentajeTabla_2);
- 
-}*/
-
-// Asignar el evento "input" a cada campo de entrada
-
-/*for (let campo of camposRangeArray) {
-  campo.addEventListener("input", actualizarSumaCampos);
-}
-
-for (let campo of camposRangeArrayClientes) {
-  campo.addEventListener("input", actualizarSumaCamposClientes);
-}*/
 for (let campo of camposRangeArraygatos_g) {
   campo.addEventListener("input", change_gastos_inputs);
 }
@@ -148,7 +157,7 @@ const planInput = document.getElementById("clienttotal2");
 const labels = ["Objetivo", "Plan actual"];
 const datasetLabel = "";
 const datasetData = [0, 0];
-const backgroundColors = ["rgba(54, 162, 235, 0.5)", "rgba(75, 192, 192, 0.5)"];
+let backgroundColors = ["rgba(255,0, 0, 0.5)", "rgba(0, 255, 0, 0.5)"];
 
 const chart = crearGrafico_paso3(
   labels,
@@ -163,78 +172,6 @@ const total = objetivo + costo; // valor total
 const porcentajeObjetivo = Math.round((objetivo / total) * 100);
 const porcentajeCosto = Math.round((costo / total) * 100);
 
-/*
-const ctx_chartplanfinanciero =  document.getElementById("chartplanfinanciero")
-.getContext("2d");
-
-const chartDataplanfinanciero  = {
-  labels: ['Objetivo', 'Plan Actual'],
-  datasets: [
-    {
-      label: 'Objetivo',
-      data: [100],
-      backgroundColor: 'rgba(75, 192, 192, 0.6)',
-      stack: 'Stack 0'
-    },
-    {
-      label: 'Costo',
-      data: [null, 35],
-      backgroundColor: 'rgba(255, 99, 132, 0.6)',
-      stack: 'Stack 1'
-    },
-    {
-      label: 'Gastos generales',
-      data: [null, 20],
-      backgroundColor: 'rgba(255, 206, 86, 0.6)',
-      stack: 'Stack 1'
-    },
-    {
-      label: 'Gastos de personal',
-      data: [null, 25],
-      backgroundColor: 'rgba(153, 102, 255, 0.6)',
-      stack: 'Stack 1'
-    },
-    {
-      label: 'Utilidad',
-      data: [null, 20],
-      backgroundColor: 'rgba(54, 162, 235, 0.6)',
-      stack: 'Stack 1'
-    }
-  ]
-};
-const chartOptionsplanfinanciero = {
-  indexAxis: 'x',
-  plugins: {
-    tooltip: {
-      callbacks: {
-        label: function (context) {
-          let label = context.dataset.label || '';
-          if (tooltips[label] && context.parsed.x !== null) {
-            label = tooltips[label];
-          }
-          if (context.parsed.x !== null) {
-            label += ': ' + context.parsed.x;
-          }
-          return label;
-        }
-      }
-    }
-  },
-  scales: {
-    x: {
-      stacked: true,
-    },
-    y: {
-      stacked: true
-    }
-  }
-};
-
-const chartplanfinanciero  = new Chart(ctx_chartplanfinanciero, {
-  type: "bar",
-  data: chartDataplanfinanciero,
-  options: chartOptionsplanfinanciero,
-});*/
 
 const chartDataplanfinanciero = {
   labels: ["Objetivo", "Plan Actual"],
@@ -242,31 +179,31 @@ const chartDataplanfinanciero = {
     {
       label: "Objetivo",
       data: [100],
-      backgroundColor: "rgba(75, 192, 192, 0.6)",
+      backgroundColor: "rgba(6, 180, 215, 0.6)",
       stack: "Stack 0",
     },
     {
       label: "Costo",
       data: [null, 35],
-      backgroundColor: "rgba(255, 99, 132, 0.6)",
+      backgroundColor: "rgba(26, 26, 26, 0.6)",
       stack: "Stack 1",
     },
     {
       label: "Gastos generales",
       data: [null, 20],
-      backgroundColor: "rgba(255, 206, 86, 0.6)",
+      backgroundColor: "rgba(77, 77, 77, 0.6)",
       stack: "Stack 1",
     },
     {
       label: "Gastos de personal",
       data: [null, 25],
-      backgroundColor: "rgba(153, 102, 255, 0.6)",
+      backgroundColor: "rgba(153, 153,153, 0.6)",
       stack: "Stack 1",
     },
     {
       label: "Utilidad",
       data: [null, 20],
-      backgroundColor: "rgba(54, 162, 235, 0.6)",
+      backgroundColor: "rgba(180, 180, 180, 0.6)",
       stack: "Stack 1",
     },
   ],
@@ -340,12 +277,12 @@ const chartDatactcosto_promedio = {
     {
       label: "% de Costo Plan",
       data: [35],
-      backgroundColor: "rgba(75, 192, 192, 0.5)",
+      backgroundColor: "rgba(6, 180, 215, 0.5)",
     },
     {
       label: "%Costo Industria",
       data: [35],
-      backgroundColor: "rgba(47, 234, 163, 0.7)",
+      backgroundColor: "rgba(77, 77, 77, 0.7)",
     },
   ],
 };
@@ -866,13 +803,19 @@ function progressBar() {
   for (let i = 0; i < icons.length; i++) {
     if (i < viewId) {
       icons[i].classList.add("active");
+     
     } else {
       icons[i].classList.remove("active");
+     
     }
+    iconsp[i].classList.remove("active");
+    iconsCl[i].classList.remove("active")
     icons[i].classList.remove("pactual");
   }
-
+iconsp[viewId - 1].classList.add("active");
   icons[viewId - 1].classList.add("pactual");
+  
+  iconsCl[viewId - 1].classList.add("active");
 }
 
 function displayForms() {
@@ -1512,18 +1455,19 @@ function actualizarGraficoCosto(nuevoCostoPromedio) {
 
 function imprimirpdf() {
   $(".buttons").hide();
+  $(".no-print").hide();
 
   var contenidoPDF = "";
   var canvas = document.getElementById("myChart");
   var chartImage = canvas.toDataURL();
   chartImage =
-    '<img class="img-grafico"  with="40%" src="' + chartImage + '" >';
+    '<img class="img-grafico"  with="25%" src="' + chartImage + '" >';
   $(".imagen-grafico").html(chartImage);
 
   var canvas_costo_promedio = document.getElementById("chart_costo_promedio");
   var chartImageCosto_promedio = canvas_costo_promedio.toDataURL();
   chartImageCosto_promedio =
-    '<img class="img-grafico"  with="40%" src="' +
+    '<img class="img-grafico"  with="25%" src="' +
     chartImageCosto_promedio +
     '" >';
   $(".imagen-grafico-costo").html(chartImageCosto_promedio);
@@ -1531,7 +1475,7 @@ function imprimirpdf() {
   var canvas_plan_promedio = document.getElementById("chartplanfinanciero");
   var chartImageplan = canvas_plan_promedio.toDataURL();
   chartImageplan =
-    '<img class="img-grafico" with="35%" src="' + chartImageplan + '" >';
+    '<img class="img-grafico" with="30%" src="' + chartImageplan + '" >';
   $(".imagen-grafico-chartplanfinanciero").html(chartImageplan);
 
   // Iterar a través de cada etiqueta <fieldset> y agregar su contenido a la variable
@@ -1589,7 +1533,7 @@ function imprimirpdf() {
 
   let datasetLabel = "";
   let datasetData = [objetivo_mensual, plan];
-  let backgroundColors = ["rgba(54, 162, 235, 0.5)", "rgba(75, 192, 192, 0.5)"];
+  let backgroundColors = ["rgba(255,0, 0, 0.5)", "rgba(0, 255, 0, 0.5)"];
   const chart = crearGrafico_paso3(
     labels,
     datasetLabel,
@@ -1612,6 +1556,7 @@ function imprimirpdf() {
       },
     ],
   };
+ 
 
   const chartCosto = grafico_costo_promedio(chartDatactcosto_promedio);
   const chartDataplanfinanciero = {
@@ -1620,31 +1565,31 @@ function imprimirpdf() {
       {
         label: "Objetivo",
         data: [100],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
+        backgroundColor:"rgba(6, 180, 215, 0.6)" ,
         stack: "Stack 0",
       },
       {
         label: "Costo",
         data: [null, costo_promedio],
-        backgroundColor: "rgba(255, 99, 132, 0.6)",
+        backgroundColor:"rgba(26, 26, 26, 0.6)",
         stack: "Stack 1",
       },
       {
         label: "Gastos generales",
         data: [null, porcentaje_gasto],
-        backgroundColor: "rgba(255, 206, 86, 0.6)",
+        backgroundColor: "rgba(77, 77, 77, 0.6)",
         stack: "Stack 1",
       },
       {
         label: "Gastos de personal",
         data: [null, porcentaje_gasto_personal],
-        backgroundColor: "rgba(153, 102, 255, 0.6)",
+        backgroundColor: "rgba(153, 153,153, 0.6)",
         stack: "Stack 1",
       },
       {
         label: "Utilidad",
         data: [null, porcentaje_utilidad],
-        backgroundColor: "rgba(54, 162, 235, 0.6)",
+        backgroundColor: "rgba(180, 180, 180, 0.6)",
         stack: "Stack 1",
       },
     ],
@@ -1660,6 +1605,7 @@ function imprimirpdf() {
 
   chartplanfinancierop.update();
   $(".buttons").show();
+  $(".no-print").show();
   $("#chartplanfinanciero").on("click", function (e) {
     var activePoints = chartplanfinancierop.getElementsAtEventForMode(
       e,
@@ -1676,6 +1622,256 @@ function imprimirpdf() {
   });
 }
 
+
+function enviar_correo() {
+  Swal.fire({
+    title: "<strong>Ingrese su correo</strong>",
+    icon: "info",
+   
+    input: "email",
+
+    showCloseButton: true,
+    showCancelButton: true,
+    focusConfirm: false,
+    confirmButtonText: '<i class="fa fa-envelope-ope"></i> Enviar email',
+    confirmButtonAriaLabel: "Enviar",
+    cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
+    cancelButtonAriaLabel: "Cancelar",
+  }).then(async (result) => {
+    console.log(result)
+    /* Read more about isConfirmed, isDenied below */
+    if (result.isConfirmed) {
+      const emailUser = result.value;
+
+      if (emailUser === "" || emailUser === undefined) {
+
+        Swal.fire("Ingrese un correo valido", "", "info");
+      } else {
+        $(".buttons").hide();
+        $(".no-print").hide();
+
+        var contenidoPDF = "";
+
+        var canvas = document.getElementById("myChart");
+        var chartImage = canvas.toDataURL();
+        chartImage ='<img lass="img-grafico" with="25%" src="' + chartImage + '" >';
+        $(".imagen-grafico").html(chartImage);
+
+        var canvas_costo_promedio = document.getElementById("chart_costo_promedio");
+        var chartImageCosto_promedio = canvas_costo_promedio.toDataURL();
+        chartImageCosto_promedio =
+          '<img lass="img-grafico" with="25%" src="' +
+          chartImageCosto_promedio +
+          '" >';
+        $(".imagen-grafico-costo").html(chartImageCosto_promedio);
+
+        var canvas_plan_promedio = document.getElementById("chartplanfinanciero");
+        var chartImageplan = canvas_plan_promedio.toDataURL();
+        chartImageplan =
+          '<img class="img-grafico" with="30%" src="' + chartImageplan + '" >';
+        $(".imagen-grafico-chartplanfinanciero").html(chartImageplan);
+
+        // Iterar a través de cada etiqueta <fieldset> y agregar su contenido a la variable
+        $(".imprimirpdf").each(function () {
+          contenidoPDF +=
+            '<div style="page-break-after:always">' + $(this).html() + "</div>";
+        });
+        var opt = {
+          margin: 0.1,
+          filename: "plan_financierocorreo.pdf",
+          image: { type: "jpeg", quality: 0.5 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "in", format: "letter", orientation: "landscape" },
+        };
+        //almacenar el pdf para enviar por correo
+        //html2pdf().set(opt).from(contenidoPDF).;
+
+        try {
+          Swal.fire("En proceso de envio", "En los proximos minutos recibirá el correo electrónico ", "info");
+      
+          var pdfBase64 = await html2pdf()
+          .set(opt)
+          .from(contenidoPDF)
+          .output('datauristring');
+        
+        var byteCharacters = atob(pdfBase64.split(',')[1]);
+        var byteNumbers = new Array(byteCharacters.length);
+        for (var i = 0; i < byteCharacters.length; i++) {
+          byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        var byteArray = new Uint8Array(byteNumbers);
+        
+        // Crear un objeto Blob a partir del contenido en formato Uint8Array
+        var pdfBlob = new Blob([byteArray], { type: 'application/pdf' });
+        
+   /*     // Crear un enlace de descarga
+        var downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(pdfBlob);
+        downloadLink.download = 'documento.pdf'; // Nombre del archivo de descarga
+        
+        // Simular un clic en el enlace para iniciar la descarga
+        downloadLink.click();*/
+        
+
+        restaurar_graficos()
+
+          var formData = new FormData();
+          formData.append("pdf", pdfBlob, "plan_financierocorreo.pdf");
+
+          formData.append("accion", "send_mail");
+          formData.append("correo", emailUser);
+          formData.append("asunto", "Plan Financiero");
+          formData.append("nombre_cliente", "");
+          formData.append("token", "F1A17B7D-3E3A3A77");
+          formData.append(
+            "contenidohtml",
+            "Hemos adjuntado el plan financiero en el siguiente archivo PDF, generado por la herramienta de Matematicas para restaurantes"
+          );
+
+          var response = await $.ajax({
+            url: "procesar.php",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+          });
+
+          console.log(response);
+        } catch (error) {
+          console.error(error);
+        }
+
+        procesado = true;
+        // enviar(contenidoPDF)
+      }
+    } else if (result.isDenied) {
+    }
+  });
+}
+
+function restaurar_graficos() {
+  $(".img-grafico").remove();
+  $(".imagen-grafico").html('<canvas id="myChart"></canvas>');
+  $(".imagen-grafico-costo").html(
+    '<canvas id="chart_costo_promedio"></canvas>'
+  );
+  $(".imagen-grafico-chartplanfinanciero").html(
+    '<canvas id="chartplanfinanciero"></canvas>'
+  );
+  const clienttotal = document.querySelector("#total_clientes_semana").value;
+
+  const consumoPromedio = document.querySelector("#tenedor_promedio").value;
+  const plan = clienttotal * consumoPromedio * SEMANAS_MES;
+  let objetivo_mensual = parseInt(
+    document.querySelector("#objetivo_mensual").value
+  );
+  let costo_promedio = parseInt(
+    document.querySelector("#costo_promedio").value
+  );
+  let total_gasto_general = $("#total_gasto_general").val();
+  var gastos_empleados = $("#gastos_empleados").val();
+
+  let porcentaje_gasto = Math.floor(
+    (total_gasto_general * 100) / objetivo_mensual
+  );
+  let porcentaje_gasto_personal = Math.floor(
+    (gastos_empleados * 100) / objetivo_mensual
+  );
+  let porcentaje_utilidad =
+    100 - porcentaje_gasto_personal - porcentaje_gasto - costo_promedio;
+
+  let datasetLabel = "";
+  let datasetData = [objetivo_mensual, plan];
+  let backgroundColors = ["rgba(255,0, 0, 0.5)", "rgba(0, 255, 0, 0.5)"];
+  
+  const chart = crearGrafico_paso3(
+    labels,
+    datasetLabel,
+    datasetData,
+    backgroundColors
+  );
+
+  const chartDatactcosto_promedio = {
+    labels: ["Costo de Establecimiento"],
+    datasets: [
+      {
+        label: "% de Costo Plan",
+        data: [costo_promedio],
+        backgroundColor: "rgba(6, 180, 215, 0.5)",
+      },
+      {
+        label: "%Costo Industria",
+        data: [35],
+        backgroundColor: "rgba(47, 234, 163, 0.7)",
+      },
+    ],
+  };
+
+  grafico_costo_promedio(chartDatactcosto_promedio);
+
+
+  const chartDataplanfinanciero = {
+    labels: ["Objetivo", "Plan Actual"],
+    datasets: [
+      {
+        label: "Objetivo",
+        data: [100],
+        backgroundColor: "rgba(6, 180, 215, 0.6)",
+        stack: "Stack 0",
+      },
+      {
+        label: "Costo",
+        data: [null, costo_promedio],
+        backgroundColor: "rgba(26, 26, 26, 0.6)",
+        stack: "Stack 1",
+      },
+      {
+        label: "Gastos generales",
+        data: [null, porcentaje_gasto],
+        backgroundColor: "rgba(77, 77, 77, 0.6)",
+        stack: "Stack 1",
+      },
+      {
+        label: "Gastos de personal",
+        data: [null, porcentaje_gasto_personal],
+        backgroundColor: "rgba(153, 153,153, 0.6)",
+        stack: "Stack 1",
+      },
+      {
+        label: "Utilidad",
+        data: [null, porcentaje_utilidad],
+        backgroundColor: "rgba(180, 180, 180, 0.6)",
+        stack: "Stack 1",
+      },
+    ],
+    tooltips: {
+      Objetivo: "$" + objetivo_mensual,
+      Costo: costo_promedio + "%",
+      "Gastos generales": porcentaje_gasto + "%",
+      "Gastos de personal": porcentaje_gasto_personal + "%",
+      Utilidad: porcentaje_utilidad + "%",
+    },
+  };
+  let chartplanfinancierop = createChartPlanFinanciero(chartDataplanfinanciero);
+
+  chartplanfinancierop.update();
+  $(".buttons").show();
+  $(".no-print").show();
+  $("#chartplanfinanciero").on("click", function (e) {
+    var activePoints = chartplanfinancierop.getElementsAtEventForMode(
+      e,
+      "nearest",
+      { intersect: true },
+      true
+    );
+    var firstPoint = activePoints[0];
+    if (firstPoint !== undefined) {
+      var value = chartplanfinancierop.data.datasets[firstPoint.datasetIndex];
+      console.log(value.label);
+      click_actulizar_text_grafico(value.label);
+    }
+  });
+}
 function distribuirEmpleados(presupuestoRestante, sueldoBase) {
   const maxEmpleados = Math.floor(
     parseInt(presupuestoRestante) / parseInt(sueldoBase)
@@ -1997,250 +2193,6 @@ function event_input_total_semanal2(event) {
   }
 }
 var procesado = false;
-function enviar_correo() {
-  Swal.fire({
-    title: "<strong>Ingrese su correo</strong>",
-    icon: "info",
-   
-    input: "email",
-
-    showCloseButton: true,
-    showCancelButton: true,
-    focusConfirm: false,
-    confirmButtonText: '<i class="fa fa-envelope-ope"></i> Enviar email',
-    confirmButtonAriaLabel: "Enviar",
-    cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
-    cancelButtonAriaLabel: "Cancelar",
-  }).then(async (result) => {
-    console.log(result)
-    /* Read more about isConfirmed, isDenied below */
-    if (result.isConfirmed) {
-      const emailUser = result.value;
-
-      if (emailUser === "" || emailUser === undefined) {
-
-        Swal.fire("Ingrese un correo valido", "", "info");
-      } else {
-        $(".buttons").hide();
-
-        var contenidoPDF = "";
-
-        var canvas = document.getElementById("myChart");
-        var chartImage = canvas.toDataURL();
-        chartImage ='<img lass="img-grafico" with="40%" src="' + chartImage + '" >';
-        $(".imagen-grafico").html(chartImage);
-
-        var canvas_costo_promedio = document.getElementById("chart_costo_promedio");
-        var chartImageCosto_promedio = canvas_costo_promedio.toDataURL();
-        chartImageCosto_promedio =
-          '<img lass="img-grafico" with="40%" src="' +
-          chartImageCosto_promedio +
-          '" >';
-        $(".imagen-grafico-costo").html(chartImageCosto_promedio);
-
-        var canvas_plan_promedio = document.getElementById("chartplanfinanciero");
-        var chartImageplan = canvas_plan_promedio.toDataURL();
-        chartImageplan =
-          '<img class="img-grafico" with="40%" src="' + chartImageplan + '" >';
-        $(".imagen-grafico-chartplanfinanciero").html(chartImageplan);
-
-        // Iterar a través de cada etiqueta <fieldset> y agregar su contenido a la variable
-        $(".imprimirpdf").each(function () {
-          contenidoPDF +=
-            '<div style="page-break-after:always">' + $(this).html() + "</div>";
-        });
-        var opt = {
-          margin: 0.1,
-          filename: "plan_financierocorreo.pdf",
-          image: { type: "jpeg", quality: 0.5 },
-          html2canvas: { scale: 2 },
-          jsPDF: { unit: "in", format: "letter", orientation: "landscape" },
-        };
-        //almacenar el pdf para enviar por correo
-        //html2pdf().set(opt).from(contenidoPDF).;
-
-        try {
-          Swal.fire("En proceso de envio", "En los proximos minutos recibirá el correo electrónico ", "info");
-      
-          var pdfBase64 = await html2pdf()
-          .set(opt)
-          .from(contenidoPDF)
-          .output('datauristring');
-        
-        var byteCharacters = atob(pdfBase64.split(',')[1]);
-        var byteNumbers = new Array(byteCharacters.length);
-        for (var i = 0; i < byteCharacters.length; i++) {
-          byteNumbers[i] = byteCharacters.charCodeAt(i);
-        }
-        var byteArray = new Uint8Array(byteNumbers);
-        
-        // Crear un objeto Blob a partir del contenido en formato Uint8Array
-        var pdfBlob = new Blob([byteArray], { type: 'application/pdf' });
-        
-   /*     // Crear un enlace de descarga
-        var downloadLink = document.createElement('a');
-        downloadLink.href = URL.createObjectURL(pdfBlob);
-        downloadLink.download = 'documento.pdf'; // Nombre del archivo de descarga
-        
-        // Simular un clic en el enlace para iniciar la descarga
-        downloadLink.click();*/
-        
-
-        restaurar_graficos()
-
-          var formData = new FormData();
-          formData.append("pdf", pdfBlob, "plan_financierocorreo.pdf");
-
-          formData.append("accion", "send_mail");
-          formData.append("correo", emailUser);
-          formData.append("asunto", "Plan Financiero");
-          formData.append("nombre_cliente", "");
-          formData.append("token", "F1A17B7D-3E3A3A77");
-          formData.append(
-            "contenidohtml",
-            "Hemos adjuntado el plan financiero en el siguiente archivo PDF, generado por la herramienta de Matematicas para restaurantes"
-          );
-
-          var response = await $.ajax({
-            url: "procesar.php",
-            type: "POST",
-            data: formData,
-            processData: false,
-            contentType: false,
-          });
-
-          console.log(response);
-        } catch (error) {
-          console.error(error);
-        }
-
-        procesado = true;
-        // enviar(contenidoPDF)
-      }
-    } else if (result.isDenied) {
-    }
-  });
-}
-
-function restaurar_graficos() {
-  $(".img-grafico").remove();
-  $(".imagen-grafico").html('<canvas id="myChart"></canvas>');
-  $(".imagen-grafico-costo").html(
-    '<canvas id="chart_costo_promedio"></canvas>'
-  );
-  $(".imagen-grafico-chartplanfinanciero").html(
-    '<canvas id="chartplanfinanciero"></canvas>'
-  );
-  const clienttotal = document.querySelector("#total_clientes_semana").value;
-
-  const consumoPromedio = document.querySelector("#tenedor_promedio").value;
-  const plan = clienttotal * consumoPromedio * SEMANAS_MES;
-  let objetivo_mensual = parseInt(
-    document.querySelector("#objetivo_mensual").value
-  );
-  let costo_promedio = parseInt(
-    document.querySelector("#costo_promedio").value
-  );
-  let total_gasto_general = $("#total_gasto_general").val();
-  var gastos_empleados = $("#gastos_empleados").val();
-
-  let porcentaje_gasto = Math.floor(
-    (total_gasto_general * 100) / objetivo_mensual
-  );
-  let porcentaje_gasto_personal = Math.floor(
-    (gastos_empleados * 100) / objetivo_mensual
-  );
-  let porcentaje_utilidad =
-    100 - porcentaje_gasto_personal - porcentaje_gasto - costo_promedio;
-
-  let datasetLabel = "";
-  let datasetData = [objetivo_mensual, plan];
-  let backgroundColors = ["rgba(54, 162, 235, 0.5)", "rgba(75, 192, 192, 0.5)"];
-  const chart = crearGrafico_paso3(
-    labels,
-    datasetLabel,
-    datasetData,
-    backgroundColors
-  );
-
-  const chartDatactcosto_promedio = {
-    labels: ["Costo de Establecimiento"],
-    datasets: [
-      {
-        label: "% de Costo Plan",
-        data: [costo_promedio],
-        backgroundColor: "rgba(75, 192, 192, 0.5)",
-      },
-      {
-        label: "%Costo Industria",
-        data: [35],
-        backgroundColor: "rgba(47, 234, 163, 0.7)",
-      },
-    ],
-  };
-
-  grafico_costo_promedio(chartDatactcosto_promedio);
-  const chartDataplanfinanciero = {
-    labels: ["Objetivo", "Plan Actual"],
-    datasets: [
-      {
-        label: "Objetivo",
-        data: [100],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        stack: "Stack 0",
-      },
-      {
-        label: "Costo",
-        data: [null, costo_promedio],
-        backgroundColor: "rgba(255, 99, 132, 0.6)",
-        stack: "Stack 1",
-      },
-      {
-        label: "Gastos generales",
-        data: [null, porcentaje_gasto],
-        backgroundColor: "rgba(255, 206, 86, 0.6)",
-        stack: "Stack 1",
-      },
-      {
-        label: "Gastos de personal",
-        data: [null, porcentaje_gasto_personal],
-        backgroundColor: "rgba(153, 102, 255, 0.6)",
-        stack: "Stack 1",
-      },
-      {
-        label: "Utilidad",
-        data: [null, porcentaje_utilidad],
-        backgroundColor: "rgba(54, 162, 235, 0.6)",
-        stack: "Stack 1",
-      },
-    ],
-    tooltips: {
-      Objetivo: "$" + objetivo_mensual,
-      Costo: costo_promedio + "%",
-      "Gastos generales": porcentaje_gasto + "%",
-      "Gastos de personal": porcentaje_gasto_personal + "%",
-      Utilidad: porcentaje_utilidad + "%",
-    },
-  };
-  let chartplanfinancierop = createChartPlanFinanciero(chartDataplanfinanciero);
-
-  chartplanfinancierop.update();
-  $(".buttons").show();
-  $("#chartplanfinanciero").on("click", function (e) {
-    var activePoints = chartplanfinancierop.getElementsAtEventForMode(
-      e,
-      "nearest",
-      { intersect: true },
-      true
-    );
-    var firstPoint = activePoints[0];
-    if (firstPoint !== undefined) {
-      var value = chartplanfinancierop.data.datasets[firstPoint.datasetIndex];
-      console.log(value.label);
-      click_actulizar_text_grafico(value.label);
-    }
-  });
-}
 function enviar(html) {
   // Crea un objeto con los datos que enviarás a la API de SendGrid
   var data = {

@@ -8,33 +8,27 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.0.1/lib/js/emojione.min.js"
-    integrity="sha512-ibgn4qpJT55EG11zy1D65XS/7pgdgVxwPEwSSNDfH35Li2kEpNHKNs/lcmkwm5kaOaA1Ls1kdRSE6L/Qs7DE+Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.0.1/assets/css/emojione.min.css"
-    integrity="sha512-stXuDISyaxZUf+TKKuWLknpyCteOwkgqm4eqXCRuryS1d9aqKj1VIuDRHevj4DC8voNTwY/mHklbyoRTkRdulQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
-    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.0.1/lib/js/emojione.min.js" integrity="sha512-ibgn4qpJT55EG11zy1D65XS/7pgdgVxwPEwSSNDfH35Li2kEpNHKNs/lcmkwm5kaOaA1Ls1kdRSE6L/Qs7DE+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.0.1/assets/css/emojione.min.css" integrity="sha512-stXuDISyaxZUf+TKKuWLknpyCteOwkgqm4eqXCRuryS1d9aqKj1VIuDRHevj4DC8voNTwY/mHklbyoRTkRdulQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!--link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     /-->
-  <link rel="stylesheet" href="style.css?v=1.0.4" />
+  <link rel="stylesheet" href="style.css?v=2.0.4" />
+  <link rel="stylesheet" href="style-movil.css?v=1" />
 
   <style>
-    body {
+    /*body {
       background: url(fondo.jpg) no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
-    }
+    }*/
   </style>
 </head>
 
@@ -42,10 +36,18 @@
   <div class="form__container">
     <div class="header-content">
       <div class="title__container">
-        <h1>Matematicas para restaurantes</h1>
-        <p text-muted>
-          Conviértete en un experto en la gestión financiera de tu restaurante
-        </p>
+
+        <h1 class=" ">
+          <span class="titulo-principal text-uppercase"> Matematicas para restaurantes</span>
+          <span class="text-muted subtitulo-principal">
+            Conviértete en un experto en la
+            gestión financiera de tu restaurante
+          </span>
+        </h1>
+
+
+
+
         <div id="emoji-container">
           <div id="emoji" class=""></div>
           <div id="emoji-text"></div>
@@ -54,100 +56,270 @@
     </div>
     <div class="body__container">
       <div class="left__container">
-        <div class="side__titles">
-          <div class="title__name">
-            <h3 class="In">Utilidad</h3>
-            <p class="In text-muted">Meta de ingresos mensuales</p>
-          </div>
-          <div class="title__name">
-            <h3>Tenedor promedio</h3>
-            <p class="In text-muted">Promedio de consumo por cliente</p>
-          </div>
-          <div class="title__name">
-            <h3>Objetivos de clientes</h3>
-            <p class="In text-muted">Calculo de clientes por día</p>
-          </div>
 
-          <div class="title__name">
-            <h3>Porcentaje de costo</h3>
-            <p class="In text-muted">Costos de tu restaurante</p>
-          </div>
-          <div class="title__name text-dark">
-            <h3>Sueldo mensual típico</h3>
-            <p class="In text-muted">Salario de empleado</p>
-          </div>
-          <div class="title__name text-dark">
-            <h3>Cantidad de personal</h3>
-            <p class="In text-muted">Proyectar cantidad de empleados</p>
-          </div>
-          <div class="title__name">
-            <h3>Gastos generales</h3>
-            <p class="text-muted">Calcula tus gastos</p>
-          </div>
-          <div class="title__name">
-            <h3>Plan financiero</h3>
-            <p class="text-muted">Listo</p>
-          </div>
-        </div>
         <div class="progress__bar__container">
           <ul>
             <li class="active pactual" id="icon1">
-              <ion-icon name="calculator-outline"></ion-icon>
+              <!--ion-icon name="calculator-outline"></ion-icon -->
             </li>
             <li id="icon2">
-              <ion-icon name="restaurant-outline"></ion-icon>
+              <!-- ion-icon name="restaurant-outline"></ion-icon -->
             </li>
 
             <li id="icon3">
-              <ion-icon name="calendar-outline"></ion-icon>
+
             </li>
             <li id="icon4">
-              <ion-icon name="wallet-outline"></ion-icon>
+
             </li>
             <li id="icon5">
-              <ion-icon name="cash-outline"></ion-icon>
+
             </li>
             <li id="icon6">
-              <ion-icon name="people-outline"></ion-icon>
+
             </li>
 
             <li id="icon7">
-              <ion-icon name="cart-outline"></ion-icon>
+
             </li>
             <li id="icon8">
-              <ion-icon name="cash-outline"></ion-icon>
+
             </li>
           </ul>
         </div>
+        <div class="header-icon text-center active iconp1">
+
+          <div class="icon-active m-auto">
+            <ion-icon name="calculator-outline">
+            </ion-icon>
+
+
+          </div>
+          <h5 class="titulo-icon text-center">Utilidad</h5>
+          <p class=" subtitulo-icon text-muted text-center"> Meta de ingresos mensuales</p>
+
+
+        </div>
+
+        <div class="header-icon text-center iconp2">
+
+          <div class="icon-active m-auto">
+            <ion-icon name="restaurant-outline"></ion-icon>
+
+          </div>
+          <h5 class="titulo-icon text-center">Tenedor promedio</h5>
+          <p class=" subtitulo-icon text-muted text-center">Promedio de consumo por cliente</p>
+
+
+        </div>
+        <div class="header-icon text-center iconp3">
+
+          <div class="icon-active m-auto">
+            <ion-icon name="calendar-outline"></ion-icon>
+
+          </div>
+          <h5 class="titulo-icon text-center">Objetivos de clientes</h5>
+          <p class=" subtitulo-icon text-muted text-center">Calculo de clientes por día</p>
+
+
+        </div>
+
+        <div class="header-icon text-center iconp4">
+
+          <div class="icon-active m-auto">
+            <ion-icon name="wallet-outline"></ion-icon>
+
+          </div>
+          <h5 class="titulo-icon text-center">Sueldo mensual típico</h5>
+          <p class=" subtitulo-icon text-muted text-center">Salario de empleado</p>
+
+
+        </div>
+        <div class="header-icon text-center iconp5">
+
+          <div class="icon-active m-auto">
+            <ion-icon name="cash-outline"></ion-icon>
+
+          </div>
+          <h5 class="titulo-icon text-center">Cantidad de personal</h5>
+          <p class=" subtitulo-icon text-muted text-center">Proyectar cantidad de empleados
+          </p>
+
+
+        </div>
+
+        <div class="header-icon text-center iconp6">
+
+          <div class="icon-active m-auto">
+            <ion-icon name="people-outline"></ion-icon>
+          </div>
+          <h5 class="titulo-icon text-center">Gastos generales</h5>
+          <p class=" subtitulo-icon text-muted text-center">Calcula tus gastos
+
+
+          </p>
+
+
+        </div>
+
+        <div class="header-icon text-center iconp7">
+
+          <div class="icon-active m-auto">
+            <ion-icon name="cart-outline"></ion-icon>
+
+          </div>
+          <h5 class="titulo-icon text-center">Gastos Generales</h5>
+          <p class=" subtitulo-icon text-muted text-center">Calcula tus gastos</p>
+
+
+        </div>
+        <div class="header-icon text-center iconp8">
+
+          <div class="icon-active m-auto">
+
+            <ion-icon name="checkmark-outline"></ion-icon>
+
+          </div>
+          <h5 class="titulo-icon text-center">Plan Financiero de tu establecimiento</h5>
+
+
+
+        </div>
+
+
+
       </div>
       <div class="right__container">
-        <fieldset id="form1" class="fieldsetform animate__animated animate__zoomIn">
-          <div class="sub__title__container">
-            <h2 class="">
-              ¿Cuánto quieres de utilidad en tu establecimiento al mes?
-            </h2>
-            <p class="animate__lightSpeedInRight text-muted">
-              Ingresa tu objetivo de ingresos mensual
-            </p>
+        <div class="content-header d-flex  justify-content-center">
+          <div class="header-icon-principal text-center active icon1">
+
+            <div class="icon-active m-auto">
+              <ion-icon name="calculator-outline">
+              </ion-icon>
+
+
+            </div>
+            <h5 class="titulo-icon text-center">Utilidad</h5>
+            <p class=" subtitulo-icon text-muted text-center"> Meta de ingresos mensuales</p>
+
+
           </div>
+
+          <div class="header-icon-principal text-center icon2">
+
+            <div class="icon-active m-auto">
+              <ion-icon name="restaurant-outline"></ion-icon>
+
+            </div>
+            <h5 class="titulo-icon text-center">Tenedor promedio</h5>
+            <p class=" subtitulo-icon text-muted text-center">Promedio de consumo por cliente</p>
+
+
+          </div>
+          <div class="header-icon-principal text-center icon3">
+
+            <div class="icon-active m-auto">
+              <ion-icon name="calendar-outline"></ion-icon>
+
+            </div>
+            <h5 class="titulo-icon text-center">Objetivos de clientes</h5>
+            <p class=" subtitulo-icon text-muted text-center">Calculo de clientes por día</p>
+
+
+          </div>
+
+          <div class="header-icon-principal text-center icon4">
+
+            <div class="icon-active m-auto">
+              <ion-icon name="wallet-outline"></ion-icon>
+
+            </div>
+            <h5 class="titulo-icon text-center">Sueldo mensual típico</h5>
+            <p class=" subtitulo-icon text-muted text-center">Salario de empleado</p>
+
+
+          </div>
+          <div class="header-icon-principal text-center icon5">
+
+            <div class="icon-active m-auto">
+              <ion-icon name="cash-outline"></ion-icon>
+
+            </div>
+            <h5 class="titulo-icon text-center">Cantidad de personal</h5>
+            <p class=" subtitulo-icon text-muted text-center">Proyectar cantidad de empleados
+            </p>
+
+
+          </div>
+
+          <div class="header-icon-principal text-center icon6">
+
+            <div class="icon-active m-auto">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <h5 class="titulo-icon text-center">Gastos generales</h5>
+            <p class=" subtitulo-icon text-muted text-center">Calcula tus gastos
+
+
+            </p>
+
+
+          </div>
+
+          <div class="header-icon-principal text-center icon7">
+
+            <div class="icon-active m-auto">
+              <ion-icon name="cart-outline"></ion-icon>
+
+            </div>
+            <h5 class="titulo-icon text-center">Gastos Generales</h5>
+            <p class=" subtitulo-icon text-muted text-center">Calcula tus gastos</p>
+
+
+          </div>
+          <div class="header-icon-principal text-center icon8">
+
+            <div class="icon-active m-auto">
+
+              <ion-icon name="checkmark-outline"></ion-icon>
+
+            </div>
+            <h5 class="titulo-icon text-center">Plan Financiero de tu establecimiento</h5>
+
+
+
+          </div>
+
+        </div>
+
+        <fieldset id="form1" class="fieldsetform animate__animated animate__zoomIn">
+
+
 
           <div class="input__container">
             <div class="row justify-content-md-center mb-5">
-              <div class="col-md-6 col-xs-12">
-                <label for="rentabilidad"> Utilidad Mes</label>
-                <div class="input-group number-spinner">
+              <div class="col-12 col-md-4">
 
-                  <input type="text" min="0" class="form-control form-control-sm validar_input " id="rentabilidad"
-                    placeholder="0" />
+                <div class="">
+                  <div class="sub__title__container">
+                    <h2 class="">
+                      ¿Cuánto quieres de utilidad en tu establecimiento al mes?
+                    </h2>
+
+                  </div>
+                  <input type="text" min="0" class=" form-input
+                   validar_input " id="rentabilidad" placeholder="0" />
+                  <label for="rentabilidad " class="text-muted text-center"> Ingresa tu objetivo de ingresos mensual</label>
 
                 </div>
+
               </div>
             </div>
             <input type="hidden" id="objetivo_mensual" />
 
-            <div class="row justify-content-end mt-5">
-              <div class="col align-self-end">
-                <a class="nxt__btn btn btn-info text-white ml-auto" onclick="nextForm();">
+            <div class="row justify-content-center mt-5">
+              <div class="col ">
+                <a class="nxt__btn btn btn-info m-auto text-white " onclick="nextForm();">
                   Siguiente</a>
               </div>
             </div>
@@ -163,7 +335,7 @@
             </h2>
             <p class="text-muted">
               Para entender cómo llegas a $<span class="valor_ganancia2"></span>
-              de utlidad al mes, puedes manejar el tenedor “promedio de tu
+              de utilidad al mes, puedes manejar el tenedor “promedio de tu
               carta”. Cambia el valor en promedio que consume un cliente en tu
               local por cada visita cambiando el “tenedor promedio” aquí
               abajo.
@@ -172,14 +344,14 @@
 
           <div class="input__container">
             <div class="row justify-content-md-center mb-5">
-              <div class="col-md-4 col-xs-12">
-                <label for="tenedor_promedio"> Tenedor promedio</label>
+              <div class="col-12 col-md-4">
+
                 <div class="input-group number-spinner">
 
-                  <input type="text" class="form-control text-right validar_input" id="tenedor_promedio" value=""
-                    placeholder="0" min="0" max="" />
+                  <input type="text" class="form-control text-right validar_input" id="tenedor_promedio" value="" placeholder="0" min="0" max="" />
 
                 </div>
+                <label for="tenedor_promedio" class="text-muted"> Tenedor promedio</label>
               </div>
             </div>
 
@@ -204,207 +376,189 @@
 
           <div class="input__container">
             <div class="row align-items-center">
-              <div class="col-xs-12 col-md-4">
+              <div class="col-12 col-md-6">
 
+                <div class="table-responsive">
 
-                <table style="padding-bottom: 0px" class="table">
-                  <thead class="thead-dark">
-                    <th></th>
-                    <th>Clientes por día</th>
-                    <th>% de clientes a la semana</th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td data-label="L">Lunes</td>
-                      <td data-label="%*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <input id="lunes" class="tick-slider-pag-4 form-control validar_input clientes-dia"
-                              type="text" min="0" max="500" step="5" value="100" data-id="1" data-tick-step="5"
-                              data-tick-id="weightTicksc1" data-value-id="weightValuec1"
-                              data-progress-id="weightProgressc1" data-handle-size="18"
-                              data-min-label-id="weightLabelMinc1" data-max-label-id="weightLabelMaxc1" />
-                          </div>
-                        </div>
-                      </td>
-                      <td data-label="Client x dia*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <p id="porcentaje-lunes" class="tick-slider-pag-3  " type="text" min="0" data-id="1"
-                              max="100" step="5" value="20" data-tick-step="5" data-tick-id="weightTicks"
-                              data-value-id="weightValue" data-progress-id="weightProgress" data-handle-size="18"
-                              data-min-label-id="weightLabelMin" data-max-label-id="weightLabelMax" readonly></p>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td data-label="M">Martes</td>
-                      <td data-label="Client x dia*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <input id="martes" class="tick-slider-pag-3 validar_input clientes-dia" type="text" min="0"
-                              max="100" step="5" value="20" data-id="2" />
-                          </div>
-                        </div>
-                      </td>
-                      <td data-label="%*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <p id="porcentaje-martes" class="tick-slider-pag-4 " type="text" min="0" max="500" step="5"
-                              value="100" data-id="2" readonly></p>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td data-label="M">Miercoles</td>
-                      <td data-label="Client x dia*">
-                        <div class="pt-input-group">
+                  <table style="padding-bottom: 0px" class="table table-bordered table-clientesdia">
+                    <thead class="table-secondary">
+                      <th>Día</th>
+                      <th class="text-center"> Clientes por día</th>
+                      <th class="text-center">% de clientes a la semana</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-label="L">Lunes</td>
+                        <td data-label="%*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input id="miercoles" class="tick-slider-pag-3 validar_input clientes-dia" type="text"
-                                min="0" max="100" step="5" value="20" data-id="3" />
+                              <input id="lunes" class="tick-slider-pag-4   form-control validar_input clientes-dia" type="text" min="0" max="500" step="5" value="100" data-id="1" data-tick-step="5" data-tick-id="weightTicksc1" data-value-id="weightValuec1" data-progress-id="weightProgressc1" data-handle-size="18" data-min-label-id="weightLabelMinc1" data-max-label-id="weightLabelMaxc1" />
                             </div>
                           </div>
-                        </div>
-                      </td>
-                      <td data-label="%*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <p id="porcentaje-miercoles" class="tick-slider-pag-4 " type="text" min="0" max="500"
-                              step="5" data-id="3" value="100"></p>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td data-label="J">Jueves</td>
-                      <td data-label="Client x dia*">
-                        <div class="pt-input-group">
+                        </td>
+                        <td data-label="Client por dia*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input id="jueves" class="tick-slider-pag-3 validar_input clientes-dia" type="text"
-                                min="0" max="100" step="5" data-id="4" value="20" />
+                              <p id="porcentaje-lunes" class="tick-slider-pag-3 text-center " type="text" min="0" data-id="1" max="100" step="5" value="20" data-tick-step="5" data-tick-id="weightTicks" data-value-id="weightValue" data-progress-id="weightProgress" data-handle-size="18" data-min-label-id="weightLabelMin" data-max-label-id="weightLabelMax" readonly></p>
                             </div>
                           </div>
-                        </div>
-                      </td>
-                      <td data-label="%*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <p id="porcentaje-jueves" class="tick-slider-pag-4 " type="text" min="0" max="500" step="5"
-                              value="100" data-id="4" readonly></p>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td data-label="V">Viernes</td>
-                      <td data-label="Client x dia*">
-                        <div class="pt-input-group">
+                      <tr>
+                        <td data-label="M">Martes</td>
+                        <td data-label="Client por dia*">
                           <div class="pt-input-group">
                             <div class="tick-slider">
-                              <input id="viernes" class="tick-slider-pag-3 validar_input form-control clientes-dia"
-                                type="text" min="0" max="100" step="5" value="20" data-id="5" />
+                              <input id="martes" class="tick-slider-pag-3 clientes-dia validar_input" type="text" min="0" max="100" step="5" value="20" data-id="2" />
                             </div>
                           </div>
-                        </div>
-                      </td>
-                      <td data-label="%*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <p id="porcentaje-viernes" class="tick-slider-pag-4 " type="text" min="0" max="500" step="5"
-                              value="100" data-id="5"></p>
+                        </td>
+                        <td data-label="%*">
+                          <div class="pt-input-group">
+                            <div class="tick-slider">
+                              <p id="porcentaje-martes" class="tick-slider-pag-4  text-center" type="text" min="0" max="500" step="5" value="100" data-id="2" readonly></p>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td data-label="S">Sabado</td>
-                      <td data-label="Client x dia*">
-                        <div class="pt-input-group">
+                      <tr>
+                        <td data-label="M">Miercoles</td>
+                        <td data-label="Client por dia*">
                           <div class="pt-input-group">
                             <div class="pt-input-group">
                               <div class="tick-slider">
-                                <input id="sabado" class="tick-slider-pag-3 validar_input clientes-dia" type="text"
-                                  min="0" max="100" step="5" data-id="6" value="0" />
+                                <input id="miercoles" class="tick-slider-pag-3 validar_input clientes-dia" type="text" min="0" max="100" step="5" value="20" data-id="3" />
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </td>
-                      <td data-label="%*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <p id="porcentaje-sabado" class="tick-slider-pag-4 " type="text" min="0" max="500" step="5"
-                              data-id="6" value="0" data-tick-step="5" readonly></p>
+                        </td>
+                        <td data-label="%*">
+                          <div class="pt-input-group">
+                            <div class="tick-slider">
+                              <p id="porcentaje-miercoles" class="tick-slider-pag-4  text-center" type="text" min="0" max="500" step="5" data-id="3" value="100"></p>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
 
-                    <tr>
-                      <td data-label="D">Domingo</td>
-                      <td data-label="Client x dia*">
-                        <div class="pt-input-group">
+                      <tr>
+                        <td data-label="J">Jueves</td>
+                        <td data-label="Client por dia*">
                           <div class="pt-input-group">
                             <div class="pt-input-group">
                               <div class="tick-slider">
-                                <input id="domingo" class="tick-slider-pag-3 validar_input  form-control clientes-dia"
-                                  type="text" min="0" max="100" step="5" value="0" data-id="7" />
+                                <input id="jueves" class="tick-slider-pag-3 validar_input clientes-dia" type="text" min="0" max="100" step="5" data-id="4" value="20" />
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </td>
-                      <td data-label="%*">
-                        <div class="pt-input-group">
-                          <div class="tick-slider">
-                            <p id="porcentaje-domingo" class="" type="text" min="0" max="500" step="5" value="0"
-                              data-id="7" readonly></p>
+                        </td>
+                        <td data-label="%*">
+                          <div class="pt-input-group">
+                            <div class="tick-slider">
+                              <p id="porcentaje-jueves" class="tick-slider-pag-4  text-center" type="text" min="0" max="500" step="5" value="100" data-id="4" readonly></p>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Totales</td>
-                      <td> <input type="text" class="form-control  validar_input  total_clientes_semana"
-                          id="total_clientes_semana" value="0" />
-                      </td>
-                      <td>
-                        <p id="total_porcentaje_semana" class="total_porcentaje_semana" value="100" aria-label=""
-                          aria-describedby="basic-addon1">100%</p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                        </td>
+                      </tr>
 
+                      <tr>
+                        <td data-label="V">Viernes</td>
+                        <td data-label="Client por dia*">
+                          <div class="pt-input-group">
+                            <div class="pt-input-group">
+                              <div class="tick-slider">
+                                <input id="viernes" class="tick-slider-pag-3 validar_input form-control clientes-dia" type="text" min="0" max="100" step="5" value="20" data-id="5" />
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td data-label="%*">
+                          <div class="pt-input-group">
+                            <div class="tick-slider">
+                              <p id="porcentaje-viernes" class="tick-slider-pag-4  text-center" type="text" min="0" max="500" step="5" value="100" data-id="5"></p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td data-label="S">Sabado</td>
+                        <td data-label="Client por dia*">
+                          <div class="pt-input-group">
+                            <div class="pt-input-group">
+                              <div class="pt-input-group">
+                                <div class="tick-slider">
+                                  <input id="sabado" class="tick-slider-pag-3 validar_input clientes-dia" type="text" min="0" max="100" step="5" data-id="6" value="0" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td data-label="%*">
+                          <div class="pt-input-group">
+                            <div class="tick-slider">
+                              <p id="porcentaje-sabado" class="tick-slider-pag-4  text-center" type="text" min="0" max="500" step="5" data-id="6" value="0" data-tick-step="5" readonly></p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td data-label="D">Domingo</td>
+                        <td data-label="Client por dia*">
+                          <div class="pt-input-group">
+                            <div class="pt-input-group">
+                              <div class="pt-input-group">
+                                <div class="tick-slider">
+                                  <input id="domingo" class="tick-slider-pag-3 validar_input  form-control clientes-dia" type="text" min="0" max="100" step="5" value="0" data-id="7" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td data-label="%*">
+                          <div class="pt-input-group">
+                            <div class="tick-slider">
+                              <p id="porcentaje-domingo" class="text-center" type="text" min="0" max="500" step="5" value="0" data-id="7" readonly></p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Totales</td>
+                        <td> <input type="text" class="form-control  validar_input  total_clientes_semana" id="total_clientes_semana" value="0" />
+                        </td>
+                        <td>
+                          <p id="total_porcentaje_semana" class="total_porcentaje_semana text-center" value="100" aria-label="" aria-describedby="basic-addon1">100%</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
               </div>
-              <div class="col-xs-12 col-md-8">
-                <div class="row justify-content-center align-items-lg-center" style="height: 15%">
+              <div class="col-12 col-md-6">
+                <div class="row justify-content-center align-items-lg-center">
 
                   <input type="hidden" class="form-control text-right" id="tenedor_promedio2" value="" />
 
-                </div>
 
-                <div class="imagen-grafico" style="position: relative; height: 50vh; width: 38vw">
-                  <canvas id="myChart"></canvas>
+                  <div class="imagen-grafico">
+                    <canvas id="myChart"></canvas>
+                  </div>
                 </div>
               </div>
-            </div>
 
+
+            </div>
             <div class="buttons">
               <a class="prev__btn btn btn btn-secondary" onclick="prevForm();">Regresar</a>
               <a class="nxt__btn btn-info text-white" onclick="nextForm();">Siguiente</a>
             </div>
+            <p class="text-center page">Pag 3/8</p>
           </div>
-          <p class="text-center page">Pag 3/8</p>
         </fieldset>
         <fieldset class="active__form fieldsetform animate__animated imprimirpdf" id="form4">
           <div class="sub__title__container">
@@ -419,27 +573,18 @@
           </div>
 
           <div class="input__container">
-            <div class="row justify-content-md-center">
-              <div class="col-md-4 col-xs-12">
+            <div class="row justify-content-center  d-flex align-items-center">
+              <div class="col-12 col-md-4 align-self-center">
                 <label for="tenedor_promedio"> Costo promedio %</label>
                 <div class="input-group number-spinner">
-                  <span class="input-group-btn">
-                    <button class="btn btn-info text-white" onclick="click_input_costo()" data-dir="up">
-                      <i class="fa fa-plus" aria-hidden="true"></i>
-                    </button>
-                  </span>
+
                   <input type="text" class="form-control validar_input text-center" id="costo_promedio" value="35" />
-                  <span class="input-group-btn">
-                    <button onclick="click_input_costo()" class="btn btn-info text-white" data-dir="dwn">
-                      <i class="fa fa-minus" aria-hidden="true"></i>
-                    </button>
-                  </span>
+
                 </div>
               </div>
-            </div>
-            <div class="row justify-content-center align-items-lg-center">
-              <div class="col-xs-12 col-md-8">
-                <div class="chart-container imagen-grafico-costo" style="position: relative; height: 50vh; width: 40vw">
+
+              <div class="col-12 col-md-6">
+                <div class="chart-container imagen-grafico-costo">
                   <canvas id="chart_costo_promedio"></canvas>
                 </div>
               </div>
@@ -469,26 +614,24 @@
 
           <div class="input__container">
             <div class="row justify-content-md-center mb-5">
-              <div class="col-xs-12 col-md-6">
+              <div class="col-12 col-md-5">
                 <label for="tenedor_promedio">
                   Sueldo promedio mes $ por empleado</label>
                 <div class="input-group number-spinner">
 
-                  <input type="text" min="0" class="form-control text-right validar_input" id="sueldo_promedio"
-                    placeholder="0" value="" />
+                  <input type="text" min="0" class="form-control text-right validar_input" id="sueldo_promedio" placeholder="0" value="" />
 
                 </div>
               </div>
             </div>
 
             <div class="row justify-content-md-center mb-5">
-              <div class="col-xs-12 col-md-6">
+              <div class="col-12 col-md-5">
                 <label for="tenedor_promedio">Valor que pagas por beneficios sociales $ por empleado por
                   mes</label>
                 <div class="input-group number-spinner">
 
-                  <input placeholder="0" type="text" min="0" class="form-control text-right validar_input"
-                    id="valor_beneficio_promedio" value="0" />
+                  <input placeholder="0" type="text" min="0" class="form-control text-right validar_input" id="valor_beneficio_promedio" value="0" />
 
                 </div>
               </div>
@@ -516,249 +659,251 @@
           </div>
 
           <div class="input__container">
-            <div class="table-responsive">
-              <table class="table table-sm table-hover " id="tabla-empleados">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Tipo empleado</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Sueldo US$</th>
-                    <th scope="col">Beneficios US$</th>
-                    <th scope="col">Otros US$</th>
-                    <th scope="col">Total US$</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td scope="Cajero " class="rowcol">Cajero</td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"></span>
+            <div class="row d-flex justify-content-center">
+              <div class="col-12 col-md-9 align-self-center">
+                <table class="table_empleado table table-bordered" id="tabla-empleados">
+                  <thead class="table-secondary">
+                    <tr>
+                      <th scope="col">Tipo empleado</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Sueldo US$</th>
+                      <th scope="col">Beneficios US$</th>
+                      <th scope="col">Otros US$</th>
+                      <th scope="col">Total US$</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td scope="Cajero " class="rowcol" data-label="Cajero">Cajero</td>
+                      <td>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                          </div>
+                          <input type="text" data-id="1" class="form-control cantidade cantidade1 validar_input" id="cant_cajeros" value="0" />
                         </div>
-                        <input type="text" data-id="1" class="form-control cantidade cantidade1 validar_input"
-                          id="cant_cajeros" value="0" />
-                      </div>
-                    </td>
+                      </td>
 
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      <td data-label="Sueldo">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="tsueldo1" value="0" />
                         </div>
-                        <input type="text" class="form-control" id="tsueldo1" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Beneficio">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="tbeneficio1" value="0" />
                         </div>
-                        <input type="text" class="form-control" id="tbeneficio1" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Otros">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="totros1" value="0" />
                         </div>
-                        <input type="text" class="form-control" id="totros1" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Total">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="ttotale1" value="0" readonly />
                         </div>
-                        <input type="text" class="form-control" id="ttotale1" value="0" readonly />
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td scope="Cocina" class="rowcol">Cocina</td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="Cocina" class="rowcol" data-label="Cocina">Cocina</td>
 
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"></span>
+                      <td data-label="Cant de cocina">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                          </div>
+                          <input type="text" data-id="2" class="form-control cantidade cantidade2 validar_input" id="cant_cocina" value="0" />
                         </div>
-                        <input type="text" data-id="2" class="form-control cantidade cantidade2 validar_input"
-                          id="cant_cocina" value="0" />
-                      </div>
-                    </td>
+                      </td>
 
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      <td data-label="Sueldo">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="tsueldo2" value="0" />
                         </div>
-                        <input type="text" class="form-control validar_input" id="tsueldo2" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Beneficio">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="tbeneficio2" value="0" />
                         </div>
-                        <input type="text" class="form-control validar_input" id="tbeneficio2" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Otros">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="totros2" value="0" />
                         </div>
-                        <input type="text" class="form-control" id="totros2" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Totales">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="ttotale2" value="0" readonly />
                         </div>
-                        <input type="text" class="form-control validar_input" id="ttotale2" value="0" readonly />
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td scope="Meseros" class="rowcol">Meseros</td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="Meseros" class="rowcol" data-label="Meseros">Meseros</td>
 
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"></span>
+                      <td data-label="Cant de meseros">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                          </div>
+                          <input type="text" class="form-control cantidade cantidade3 validar_input" data-id="3" id="cant_meseros" value="0" />
                         </div>
-                        <input type="text" class="form-control cantidade cantidade3 validar_input" data-id="3"
-                          id="cant_meseros" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Sueldo">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="tsueldo3" value="0" />
                         </div>
-                        <input type="text" class="form-control" id="tsueldo3" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Beneficio">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="tbeneficio3" value="0" />
                         </div>
-                        <input type="text" class="form-control validar_input" id="tbeneficio3" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Otros">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="totros3" value="0" />
                         </div>
-                        <input type="text" class="form-control validar_input" id="totros3" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Total">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="ttotale3" value="0" readonly />
                         </div>
-                        <input type="text" class="form-control validar_input" id="ttotale3" value="0" readonly />
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td scope="Administrador" class="rowcol">Administrador</td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="Administrador" class="rowcol" data-label="Administrador">Administrador</td>
+                      <td>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                          </div>
+                          <input type="text" data-id="4" class="form-control cantidade cantidade4 validar_input" id="cant_administrador" />
                         </div>
-                        <input type="text" data-id="4" class="form-control cantidade cantidade4 validar_input"
-                          id="cant_administrador" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Sueldo">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="tsueldo4" value="0" />
                         </div>
-                        <input type="text" class="form-control" id="tsueldo4" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
+                      </td>
+                      <td data-label="Beneficio">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="tbeneficio4" value="0" />
                         </div>
-                        <input type="text" class="form-control validar_input" id="tbeneficio4" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
-                        </div>
-                        <input type="text" class="form-control validar_input" id="totros4" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
-                        </div>
-                        <input type="text" class="form-control validar_input" id="ttotale4" value="0" readonly />
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td scope="Otros" class="rowcol">Otros</td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"></span>
-                        </div>
-                        <input type="text" data-id="5" class="form-control cantidade cantidade5 validar_input"
-                          id="cant_otros" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
-                        </div>
-                        <input type="text" class="form-control" id="tsueldo5" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
-                        </div>
-                        <input type="text" class="form-control" id="tbeneficio5" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
-                        </div>
-                        <input type="text" class="form-control validar_input" id="totros5" value="0" />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
-                        </div>
-                        <input type="text" class="form-control" id="ttotale5" value="0" readonly />
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                      </td>
+                      <td data-label="Meseros">
 
-            <div class="row justify-content-md-center mb-5">
-              <div class="col-xs-12 col-md-4">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="totros4" value="0" />
+                        </div>
+                      </td>
+                      <td data-label="Total">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="ttotale4" value="0" readonly />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="Otros" class="rowcol" data-label="Otros">Otros</td>
+                      <td>
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                          </div>
+                          <input type="text" data-id="5" class="form-control cantidade cantidade5 validar_input" id="cant_otros" value="0" />
+                        </div>
+                      </td>
+                      <td data-label="Sueldo">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="tsueldo5" value="0" />
+                        </div>
+                      </td>
+                      <td data-label="Beneficio">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="tbeneficio5" value="0" />
+                        </div>
+                      </td>
+                      <td data-label="Otros">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control validar_input" id="totros5" value="0" />
+                        </div>
+                      </td>
+                      <td data-label="Totales">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                          </div>
+                          <input type="text" class="form-control" id="ttotale5" value="0" readonly />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+           
+              <div class="col-12 col-md-3 align-self-center">
                 <label for="tenedor_promedio"> Gasto empleado Mes $</label>
                 <div class="input-group number-spinner">
 
@@ -767,7 +912,8 @@
                 </div>
                 <input type="hidden" name="" id="sueldo_promedio_final" />
                 <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="checkdistribuiraut" checked />
+                  <input type="checkbox" class="custom-control-input dark checkbox" id="checkdistribuiraut" checked />
+              
                   <label class="custom-control-label" for="checkdistribuiraut">Distrubuir automaticamente</label>
                 </div>
               </div>
@@ -793,9 +939,13 @@
 
           <div class="input__container">
 
+          <div class="row justify-content-md-center">
+
+     
+              <div class="col-12 col-md-6 mb-5">
             <div class="table-responsive">
-              <table class="table table-hover " id="tabla_gasto_general">
-                <thead class="thead-dark">
+              <table class="table table-hover  table-bordered" id="tabla_gasto_general">
+                <thead class="table-secondary">
                   <tr>
                     <th scope="col">Descripción Rubro</th>
                     <th scope="col">Valor Mes</th>
@@ -856,20 +1006,24 @@
                 </tbody>
               </table>
             </div>
-            <button data-toggle="tooltip" data-placement="top" title="Agregar nueva fila"
-              onclick="agregar_fila_gastos()" class="btn btn-primary w-25 col-2 align-self-end float-right">
+            <button data-toggle="tooltip" data-placement="top" title="Agregar nueva fila" onclick="agregar_fila_gastos()" class="btn btn-primary w-25 col-2 align-self-end float-right">
               <i class="fa fa-plus" aria-hidden="true"></i>
             </button>
-            <div class="row justify-content-md-center mb-5">
-              <div class="col-xs-12 col-md-6">
+           <div class="row d-flex align-items-center justify-content-center" style="height:0%">
+           <div class="col-8  ">
+           
+                <div class="form-group number-spinner">
                 <label for="tenedor_promedio"> Gastos $</label>
-                <div class="input-group number-spinner">
-
                   <input type="text" class="form-control text-center" id="total_gasto_general" value="0" readonly />
 
                 </div>
+            </div>
+           </div>
+          
+               
               </div>
             </div>
+
             <div class="buttons">
               <a class="prev__btn btn btn btn-secondary" onclick="prevForm();">Regresar</a>
               <a class="nxt__btn btn-info text-white" onclick="nextForm();">Siguiente</a>
@@ -893,55 +1047,57 @@
 
           <div class="input__container">
             <div class="row">
-              <div class="col-xs-12 col-md-6">
-                <div class="imagen-grafico-chartplanfinanciero d-flex flex-row"
-                  style="position: relative; height: 45vh; width: 30vw">
+              <div class="col-12 col-md-4">
+                <div class="imagen-grafico-chartplanfinanciero d-flex flex-row">
                   <canvas id="chartplanfinanciero"></canvas>
                 </div>
               </div>
 
-              <div class="col-xs-12 col-md-6">
+              <div class="col-12 col-md-4">
                 <div class="row justify-content-md-center mb-5 pl-4">
-                  <div class="col-md-6 col-xs-12" style="margin-left: 20%;">
-                    <h2 class="titulo_utilidad">Tu Utilidad</h2>
-                    <h2 class="form-porcentaje titulo-porcentaje">18%</h2>
-                    <h2 class="form-porcentaje titulo-cantidad">$4,200</h2>
+                  <div class="col-md-6 col-xs-12  justify-content-center d-flex flex-column align-self-center" >
+
+                    <h2 class="form-porcentaje">Utilidad: <span class="titulo-porcentaje"></span> =
+                      <span class="titulo-cantidad"> </span>
+                    </h2>
+
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row justify-content-md-center mb-5">
-              <div class="col-md-4 col-xs-4">
-                <button type="button" class="btn btn-info" onclick="imprimirpdf()">
+              <div class="col-12 col-md-3">
+            <div class="contenedor-botones-f row     justify-content-center mb-5">
+              <div class=" col-12   no-print justify-content-center d-flex flex-column align-self-center">
+                <button type="button" class="btn btn-info btn-block m-1 no-print " onclick="imprimirpdf()">
                   Descargar plan financiero PDF
                 </button>
-              </div>
-              <div class="col-md-4 col-xs-4">
-                <button type="button" class="btn btn-secondary" onclick="enviar_correo()">
+          
+         
+                <button type="button" class="btn btn-secondary btn-block  m-1 no-print" onclick="enviar_correo()">
                   Enviar Correo
                 </button>
-              </div>
-              <div class="col-md-4 col-xs-4">
+      
+              
                 <form id="form-login" action="login.php" method="post">
 
-                
-                <input type="hidden" name="clientes_mes" id="clientes_mes">
-                <input type="hidden" id="datosTablaempleado" name="datos_tabla_empleado" >
-                <input type="hidden" id="campo_datos_gasto_general" name="campo_datos_gasto_general">
-                
+
+                  <input type="hidden" name="clientes_mes" id="clientes_mes">
+                  <input type="hidden" id="datosTablaempleado" name="datos_tabla_empleado">
+                  <input type="hidden" id="campo_datos_gasto_general" name="campo_datos_gasto_general">
+
                   <input type="hidden" name="form_objetivo">
                   <input type="hidden" name="form_utilidad">
                   <input type="hidden" name="form_gasto_general" id="form_gasto_general">
                   <input type="hidden" name="form_gasto_personal" id="form_gasto_personal">
                   <input type="hidden" name="form_tenedor_promedio" id="form_tenedor_promedio">
                   <input type="hidden" name="form_costo" id="form_costo">
-                  <button type="submit" class="btn btn-primary">Guadar plan para seguimiento</button>
+                  <button type="submit" class="btn btn-primary btn-block  m-1 no-print">Guadar plan para seguimiento</button>
                 </form>
               </div>
             </div>
-
+          </div>
+          </div>
             <div class="buttons">
-              <a class="prev__btn btn btn btn-secondary" onclick="prevForm();">Regresar</a>
+              <a class="prev__btn btn btn btn-secondary m-auto" onclick="prevForm();">Regresar</a>
               <a class="nxt__btn btn-info text-white" onclick="nextForm();">Siguiente</a>
             </div>
           </div>
@@ -951,12 +1107,8 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -972,7 +1124,7 @@
   <script src="app.js?v=1.0.2"></script>
 
   <script type="text/javascript" src="#">
-    $(function () {
+    $(function() {
       $('[data-toggle="tooltip"]').tooltip()
     })
   </script>
