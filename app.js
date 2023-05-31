@@ -64,30 +64,27 @@ window.onload = init;
 window.addEventListener("resize", onResize);
 
 /**EVENTOS */
-const tenenedo_promedio_2 = document.getElementById("tenedor_promedio2");
+
 const tenenedo_promedio_1 = document.getElementById("tenedor_promedio");
-tenenedo_promedio_2.addEventListener("input", event_tenedor_promedio);
+
 const rentabilidad = document.querySelector("#rentabilidad");
 const costoPromedioInput = document.getElementById("costo_promedio");
 rentabilidad.addEventListener("change", (event) => {
   const valor_ganancia = document.querySelector(".valor_ganancia");
   const valor_venta = document.querySelector(".valor_venta");
 
-  document.querySelector("#objetivo_mensual").value = Math.round(
-    event.target.value * 5
-  );
-  document.querySelector(".valor_ganancia2").innerHTML = event.target.value;
-  document.querySelector(".valor_ganancia3").innerHTML = event.target.value;
+  document.querySelector("#objetivo_mensual").value =financial(event.target.value * 5);
 
-  valor_ganancia.innerHTML = `${event.target.value}`;
-  valor_venta.innerHTML = ` ${event.target.value * 5}`;
+
+
+  valor_ganancia.innerHTML = `${financial(event.target.value)}`;
+  valor_venta.innerHTML = ` ${financial(event.target.value * 5)}`;
+  document.querySelector(".valor_ventap").innerHTML=`${financial(event.target.value * 5)}`;
 });
 
 var cgastos_empleadosInput = document.getElementById("gastos_empleados");
 var btn_gatos_empleado = document.querySelector(".btn_gatos_empleado");
-var sueldo_promedio_finalInput = document.getElementById(
-  "sueldo_promedio_final"
-).value;
+var sueldo_promedio_finalInput = document.getElementById("sueldo_promedio_final").value;
 cgastos_empleadosInput.addEventListener("change", change_input_empleado);
 const inputs_clienttotal = document.getElementById("clienttotal");
 const inputs_clienttotal_2 = document.getElementById("total_clientes_semana");
@@ -159,12 +156,7 @@ const datasetLabel = "";
 const datasetData = [0, 0];
 let backgroundColors = ["rgba(255,0, 0, 0.5)", "rgba(0, 255, 0, 0.5)"];
 
-const chart = crearGrafico_paso3(
-  labels,
-  datasetLabel,
-  datasetData,
-  backgroundColors
-);
+
 const objetivo = 65; // valor del objetivo
 const costo = 35; // valor del costo
 const total = objetivo + costo; // valor total
@@ -287,7 +279,7 @@ const chartDatactcosto_promedio = {
   ],
 };
 
-const chartCosto = grafico_costo_promedio(chartDatactcosto_promedio);
+
 function grafico_costo_promedio(chartDatactcosto_promedio) {
   const ctx_costo_promedio = document
     .getElementById("chart_costo_promedio")
@@ -363,9 +355,8 @@ costoPromedioInput.addEventListener("input", () => {
   console.log("costoPromedioInput");
   const nuevoCostoPromedio = parseFloat(costoPromedioInput.value);
   const objetivo_mensual = document.querySelector("#objetivo_mensual").value;
-  const tenedor_promedio2 = document.querySelector("#tenedor_promedio2").value;
+  const tenedor_promedio2 = document.querySelector("#tenedor_promedio").value;
 
-  actualizarGraficoCosto(nuevoCostoPromedio);
 
   if (nuevoCostoPromedio > 35) {
     const porcentajecosto = Math.floor(
@@ -397,8 +388,8 @@ costoPromedioInput.addEventListener("input", () => {
 function click_input_costo() {
   const nuevoCostoPromedio = parseFloat(costoPromedioInput.value);
   const objetivo_mensual = document.querySelector("#objetivo_mensual").value;
-  const tenedor_promedio2 = document.querySelector("#tenedor_promedio2").value;
-  actualizarGraficoCosto(nuevoCostoPromedio);
+  const tenedor_promedio2 = document.querySelector("#tenedor_promedio").value;
+
 
   if (nuevoCostoPromedio > 35) {
     const porcentajecosto = Math.floor(
@@ -512,7 +503,7 @@ function nextForm() {
       viewId--;
       return false;
     }
-    document.getElementById("tenedor_promedio2").value = tenedor_promedio.value;
+    document.getElementById("tenedor_promedio").value = tenedor_promedio.value;
     // calcular promedio semanal
     const objetivoMensual = document.querySelector("#objetivo_mensual").value;
     const consumoPromedio = document.querySelector("#tenedor_promedio").value;
@@ -521,7 +512,7 @@ function nextForm() {
      * PASO 4
      */
   } else if (viewId === 4) {
-    const consumoPromedio = document.querySelector("#tenedor_promedio2").value;
+    const consumoPromedio = document.querySelector("#tenedor_promedio").value;
     const clienttotal = document.querySelector("#total_clientes_semana").value;
     const meta_alcanzada = clienttotal * consumoPromedio * SEMANAS_MES;
 
@@ -532,6 +523,8 @@ function nextForm() {
     document.querySelector(".valor_costo_promedio").innerHTML =
       "$" + Math.round((consumoPromedio * 40) / 100);
   } else if (viewId === 5) {
+   let obtetivo= document.querySelector("#objetivo_mensual").value
+    document.querySelector(".text-gasto-maximo").innerHTML = ""+obtetivo*0.25
   } else if (viewId === 6) {
     //validate input sueldo_promedio valor_beneficio_promedio
     var sueldo_promedio = document.querySelector("#sueldo_promedio").value;
@@ -601,20 +594,20 @@ function nextForm() {
     }
 
     // Mostramos los resultados en los campos input correspondientes
-    var tsueldo2 = cant_cocina * sueldo_promedio_base;
+    var tsueldo2 =  sueldo_promedio_base;
     setVal("#cant_cajeros", cant_cajero);
-    setVal("#tsueldo1", parseInt(cant_cajero * sueldo_promedio_base));
-    setVal("#tbeneficio1", parseInt(cant_cajero * valor_beneficio));
+    setVal("#tsueldo1", parseInt(sueldo_promedio_base));
+    setVal("#tbeneficio1", parseInt( valor_beneficio));
     setVal("#cant_cocina", cant_cocina);
     setVal("#tsueldo2", tsueldo2);
 
-    setVal("#tbeneficio2", parseInt(cant_cocina * valor_beneficio));
+    setVal("#tbeneficio2", parseInt(valor_beneficio));
     setVal("#cant_meseros", cant_meseros);
-    setVal("#tsueldo3", parseInt(cant_meseros * sueldo_promedio_base));
-    setVal("#tbeneficio3", parseInt(cant_meseros * valor_beneficio));
+    setVal("#tsueldo3", parseInt( sueldo_promedio_base));
+    setVal("#tbeneficio3", parseInt(valor_beneficio));
     setVal("#cant_administrador", cant_administradores);
-    setVal("#tsueldo4", parseInt(cant_administradores * sueldo_promedio_base));
-    setVal("#tbeneficio4", parseInt(cant_administradores * valor_beneficio));
+    setVal("#tsueldo4", parseInt( sueldo_promedio_base));
+    setVal("#tbeneficio4", parseInt( valor_beneficio));
 
     calcula_totales_empleados();
 
@@ -624,13 +617,15 @@ function nextForm() {
   } else if (viewId === 7) {
     var ventasMensual = document.querySelector("#objetivo_mensual").value;
     const gasto_maximo = Math.floor((20 * ventasMensual) / 100);
-    const arriendo_local = Math.floor((7.5 * gasto_maximo) / 100);
-    const otros_gastos = Math.floor((7.5 * gasto_maximo) / 100);
-    let gastado = arriendo_local + arriendo_local;
-    const gastos_restante = Math.floor((gasto_maximo - gastado) / 2);
+    const arriendo_local = Math.floor((60 * gasto_maximo) / 100);
+    const marketing = Math.floor((15 * gasto_maximo) / 100);
+    const sevicios = Math.floor((15 * gasto_maximo) / 100);
+    const gastos_restante = Math.floor((10 * gasto_maximo) / 100);
+    let gastado = marketing + arriendo_local+sevicios;
+
     setVal("#gastogral1", arriendo_local);
-    setVal("#gastogral2", otros_gastos);
-    setVal("#gastogral3", gastos_restante);
+    setVal("#gastogral2", sevicios);
+    setVal("#gastogral3", marketing);
     setVal("#gastogral4", gastos_restante);
     setVal("#total_gasto_general", gasto_maximo);
 
@@ -715,9 +710,16 @@ function nextForm() {
 
     // Recorrer todas las filas de la tabla y obtener los datos
     for (let i = 1; i < filas_gasto_general.length; i++) {
-      const descripcion = filas_gasto_general[i]
-        .getElementsByTagName("th")[0]
-        .textContent.trim();
+
+   //   if (elemento.tagName === 'INPUT') 
+
+let descripcion='';
+   if(filas_gasto_general[i].getElementsByTagName("th")[0]===undefined){
+     descripcion ='Otros'+i
+   }else{
+     descripcion = filas_gasto_general[i].getElementsByTagName("th")[0].textContent.trim();
+   }
+    
       const valor_mes = parseFloat(
         filas_gasto_general[i].querySelector("input").value
       );
@@ -768,12 +770,12 @@ function goToForm(formIndex) {
 
 function click_tenedor_promedio() {
   const tenenedo_promedio_2 =
-    document.getElementById("tenedor_promedio2").value;
+    document.getElementById("tenedor_promedio").value;
   const clienttotal = document.querySelector("#total_clientes_semana").value;
   const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
   const consumoPromedio = tenenedo_promedio_2;
   const meta_alcanzada = clienttotal * consumoPromedio * SEMANAS_MES;
-  actualizarGrafico(metaVentasMensual, meta_alcanzada);
+
 }
 
 function event_tenedor_promedio(event) {
@@ -781,7 +783,7 @@ function event_tenedor_promedio(event) {
   const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
   const consumoPromedio = event.target.value;
   const meta_alcanzada = clienttotal * consumoPromedio * SEMANAS_MES;
-  actualizarGrafico(metaVentasMensual, meta_alcanzada);
+
 }
 
 function prevForm() {
@@ -1022,7 +1024,7 @@ function actualizar_tabla_paso_4() {
 
   const consumoPromedio = document.querySelector("#tenedor_promedio").value;
 
-  setVal("#tenedor_promedio2", consumoPromedio);
+  setVal("#tenedor_promedio", consumoPromedio);
 }
 
 function actualizarTotalesSumaClientes(id_campo_actual) {
@@ -1108,10 +1110,10 @@ function actualizar_rentabilidad() {
   document.querySelector("#objetivo_mensual").value = Math.round(
     rentabilidad * 5
   );
-  document.querySelector(".valor_ganancia2").innerHTML = rentabilidad;
-  document.querySelector(".valor_ganancia3").innerHTML = rentabilidad;
-  valor_ganancia.innerHTML = `${rentabilidad}`;
-  valor_venta.innerHTML = `${rentabilidad * 5}`;
+  
+
+  valor_ganancia.innerHTML = `${financial(rentabilidad)}`;
+  valor_venta.innerHTML = `${ financial(rentabilidad * 5)}`;
 }
 
 function actualizarClienteTabla2(event) {
@@ -1141,11 +1143,11 @@ function actualizarClienteTabla2(event) {
   );
   sumaCamposElement.text = Math.round(sumaValores);
 
-  const consumoPromedio = document.getElementById("tenedor_promedio2");
+  const consumoPromedio = document.getElementById("tenedor_promedio");
   const SEMANAS_MES = 4;
   const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
   const meta_alcanzada = totalClientes2.value * consumoPromedio * SEMANAS_MES;
-  actualizarGrafico(metaVentasMensual, meta_alcanzada);
+ 
   // Verificar si la suma es mayor a 100
   if (sumaValores > 100) {
     VALIDACION.pasa = false;
@@ -1218,14 +1220,14 @@ async function calcular() {
 
   const total_porcentaje = await calcularPorcentajes(inputsc, suma);
   totalPorcentajeSemana.textContent = Math.round(total_porcentaje) + "%";
-
+ 
   const SEMANAS_MES = 4;
   const consumoPromedio = document.getElementById("tenedor_promedio");
   const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
   const meta_alcanzada = suma * consumoPromedio.value * SEMANAS_MES;
-
+  calcularVentasMesPorCliente(consumoPromedio.value,suma)
   console.log(metaVentasMensual, meta_alcanzada);
-  actualizarGrafico(metaVentasMensual, meta_alcanzada);
+
 
   if (meta_alcanzada < metaVentasMensual) {
     VALIDACION.pasa = false;
@@ -1283,11 +1285,15 @@ function actualizarPorcentajes() {
   actualizarSumaCampos();
 }
 
+function calcularVentasMesPorCliente(consumoPromedio,totalClientesSemana){
+  const SEMANAS_MES = 4;
+  const total =totalClientesSemana*consumoPromedio*SEMANAS_MES;
+  document.querySelector(".total_ventas_clientes").innerHTML='Ventas Total: $'+total
+}
 function calcularClientesPorDia(consumoPromedio, metaVentasMensual) {
   const DIAS_LABORABLES_SEMANA = 5;
   const SEMANAS_MES = 4;
-  const ventasDiarias =
-    metaVentasMensual / (DIAS_LABORABLES_SEMANA * SEMANAS_MES);
+  const ventasDiarias = metaVentasMensual / (DIAS_LABORABLES_SEMANA * SEMANAS_MES);
   const clientesPorDiaRedondeado = Math.ceil(ventasDiarias / consumoPromedio);
   const totalClientesSemana = clientesPorDiaRedondeado * DIAS_LABORABLES_SEMANA;
   const porcentaje = (clientesPorDiaRedondeado * 100) / totalClientesSemana;
@@ -1318,7 +1324,7 @@ function calcularClientesPorDia(consumoPromedio, metaVentasMensual) {
   document.getElementById("porcentaje-domingo").textContent = "0%";
 
   const meta_alcanzada = totalClientesSemana * consumoPromedio * SEMANAS_MES;
-  actualizarGrafico(metaVentasMensual, meta_alcanzada);
+  calcularVentasMesPorCliente(consumoPromedio,totalClientesSemana)
   /*for (let index = 1; index < 6; index++) {
    // var porcentajeInput = document.querySelector("#porcentaje_m" + index);
     var clienteInput = document.querySelector("#clientes_l" + index);
@@ -1458,19 +1464,12 @@ function imprimirpdf() {
   $(".no-print").hide();
 
   var contenidoPDF = "";
-  var canvas = document.getElementById("myChart");
-  var chartImage = canvas.toDataURL();
   chartImage =
     '<img class="img-grafico"  with="25%" src="' + chartImage + '" >';
   $(".imagen-grafico").html(chartImage);
 
-  var canvas_costo_promedio = document.getElementById("chart_costo_promedio");
-  var chartImageCosto_promedio = canvas_costo_promedio.toDataURL();
-  chartImageCosto_promedio =
-    '<img class="img-grafico"  with="25%" src="' +
-    chartImageCosto_promedio +
-    '" >';
-  $(".imagen-grafico-costo").html(chartImageCosto_promedio);
+
+
 
   var canvas_plan_promedio = document.getElementById("chartplanfinanciero");
   var chartImageplan = canvas_plan_promedio.toDataURL();
@@ -1494,12 +1493,7 @@ function imprimirpdf() {
 
   // New Promise-based usage:
   html2pdf().set(opt).from(contenidoPDF).save();
-  $(".img-grafico").remove();
 
-  $(".imagen-grafico").html('<canvas id="myChart"></canvas>');
-  $(".imagen-grafico-costo").html(
-    '<canvas id="chart_costo_promedio"></canvas>'
-  );
   $(".imagen-grafico-chartplanfinanciero").html(
     '<canvas id="chartplanfinanciero"></canvas>'
   );
@@ -1534,12 +1528,7 @@ function imprimirpdf() {
   let datasetLabel = "";
   let datasetData = [objetivo_mensual, plan];
   let backgroundColors = ["rgba(255,0, 0, 0.5)", "rgba(0, 255, 0, 0.5)"];
-  const chart = crearGrafico_paso3(
-    labels,
-    datasetLabel,
-    datasetData,
-    backgroundColors
-  );
+
 
   const chartDatactcosto_promedio = {
     labels: ["Costo de Establecimiento"],
@@ -1558,7 +1547,6 @@ function imprimirpdf() {
   };
  
 
-  const chartCosto = grafico_costo_promedio(chartDatactcosto_promedio);
   const chartDataplanfinanciero = {
     labels: ["Objetivo", "Plan Actual"],
     datasets: [
@@ -1652,18 +1640,8 @@ function enviar_correo() {
 
         var contenidoPDF = "";
 
-        var canvas = document.getElementById("myChart");
-        var chartImage = canvas.toDataURL();
-        chartImage ='<img lass="img-grafico" with="25%" src="' + chartImage + '" >';
-        $(".imagen-grafico").html(chartImage);
+   
 
-        var canvas_costo_promedio = document.getElementById("chart_costo_promedio");
-        var chartImageCosto_promedio = canvas_costo_promedio.toDataURL();
-        chartImageCosto_promedio =
-          '<img lass="img-grafico" with="25%" src="' +
-          chartImageCosto_promedio +
-          '" >';
-        $(".imagen-grafico-costo").html(chartImageCosto_promedio);
 
         var canvas_plan_promedio = document.getElementById("chartplanfinanciero");
         var chartImageplan = canvas_plan_promedio.toDataURL();
@@ -1750,11 +1728,7 @@ function enviar_correo() {
 }
 
 function restaurar_graficos() {
-  $(".img-grafico").remove();
-  $(".imagen-grafico").html('<canvas id="myChart"></canvas>');
-  $(".imagen-grafico-costo").html(
-    '<canvas id="chart_costo_promedio"></canvas>'
-  );
+
   $(".imagen-grafico-chartplanfinanciero").html(
     '<canvas id="chartplanfinanciero"></canvas>'
   );
@@ -1784,12 +1758,8 @@ function restaurar_graficos() {
   let datasetData = [objetivo_mensual, plan];
   let backgroundColors = ["rgba(255,0, 0, 0.5)", "rgba(0, 255, 0, 0.5)"];
   
-  const chart = crearGrafico_paso3(
-    labels,
-    datasetLabel,
-    datasetData,
-    backgroundColors
-  );
+
+  
 
   const chartDatactcosto_promedio = {
     labels: ["Costo de Establecimiento"],
@@ -1807,7 +1777,7 @@ function restaurar_graficos() {
     ],
   };
 
-  grafico_costo_promedio(chartDatactcosto_promedio);
+
 
 
   const chartDataplanfinanciero = {
@@ -1876,44 +1846,41 @@ function distribuirEmpleados(presupuestoRestante, sueldoBase) {
   const maxEmpleados = Math.floor(
     parseInt(presupuestoRestante) / parseInt(sueldoBase)
   ); // Calculamos el número máximo de empleados que se pueden contratar
-  console.log(maxEmpleados, presupuestoRestante, sueldoBase);
-  // Distribución inicial
+  
   let cant_cajero = 1;
-  let cant_cocina = 1;
-  let cant_meseros = Math.min(maxEmpleados - 2, cant_cajero * 4 + 2);
+  let cant_cocina = 0;
+  let cant_meseros = 0;
   let cant_administradores = 0;
-  let empleadosContratados = 0;
-
-  empleadosContratados =
-    cant_cajero + cant_cocina + cant_meseros + cant_administradores;
+  let empleadosContratados = cant_cajero;
 
   // Mientras queden empleados por contratar y el número de empleados contratados no supere el máximo posible, seguimos distribuyendo
   while (
     empleadosContratados < maxEmpleados &&
     presupuestoRestante >= sueldoBase
   ) {
-    // Asignamos un mesero por cada cajero
-    cant_meseros += cant_cajero;
-    empleadosContratados += cant_cajero;
-
-    // Asignamos un administrador por cada dos cajeros
-    if (cant_cajero >= 2) {
-      cant_administradores += Math.floor(cant_cajero / 2);
-      empleadosContratados += Math.floor(cant_cajero / 2);
-    }
-
-    // Si aún quedan empleados por contratar, aumentamos la cantidad de cajeros y recalculamos los meseros
-    if (empleadosContratados < maxEmpleados) {
-      cant_cajero++;
-      cant_meseros = Math.min(
-        maxEmpleados - cant_administradores - cant_cocina - cant_cajero,
-        cant_cajero * 4 + 2
-      );
+    // Asignamos un mesero y un cocinero si es posible
+    if (empleadosContratados + 2 <= maxEmpleados) {
+      cant_meseros++;
+      cant_cocina++;
+      empleadosContratados += 2;
+    } 
+    // Asignamos un mesero si solo queda presupuesto para un empleado
+    else if (empleadosContratados + 1 <= maxEmpleados) {
+      cant_meseros++;
       empleadosContratados++;
     }
-  }
-  if (cant_meseros < 0) {
-    cant_meseros = 0;
+
+    // Asignamos un administrador por cada dos cajeros
+    if (cant_cajero % 2 === 0) {
+      cant_administradores++;
+      empleadosContratados++;
+    }
+
+    // Si aún quedan empleados por contratar, aumentamos la cantidad de cajeros
+    if (empleadosContratados < maxEmpleados) {
+      cant_cajero++;
+      empleadosContratados++;
+    }
   }
 
   return {
@@ -1927,7 +1894,9 @@ function distribuirEmpleados(presupuestoRestante, sueldoBase) {
   };
 }
 
+
 function calcula_totales_empleados(modificar_total = true) {
+  console.log('calcula_totales_empleados')
   const input_sueldos = document.querySelectorAll('input[id^="tsueldo"]');
 
   const camposRangeArraysueldos = Array.from(input_sueldos);
@@ -1937,6 +1906,7 @@ function calcula_totales_empleados(modificar_total = true) {
   for (let campo of camposRangeArraysueldos) {
     let cant = $(".cantidade" + idkey).val();
 
+    console.log(cant,'cant')
     if (isNaN(cant)) {
       cant = 0;
     }
@@ -1953,9 +1923,9 @@ function calcula_totales_empleados(modificar_total = true) {
       campo.value = 0;
     }
     var totalfila = parseInt(campo.value) + tbeneficio + otros;
-    total_global += totalfila;
+    total_global += totalfila*cant;
 
-    setVal("#ttotale" + idkey, totalfila);
+    setVal("#ttotale" + idkey, totalfila*cant);
 
     idkey++;
   }
@@ -1971,6 +1941,7 @@ function evento_inputs_personal() {
 }
 
 function evento_inputs_cantidad(event) {
+  console.log('evento_inputs_cantidad')
   var cant = event.target.value;
   var idkey = event.target.dataset.id;
   if (isNaN(cant)) {
@@ -1985,8 +1956,8 @@ function evento_inputs_cantidad(event) {
   var totalfila = parseInt(tsueldo) * cant;
   var totalbeneficio = tbeneficio * cant;
 
-  setVal("#tsueldo" + idkey, totalfila);
-  setVal("#tbeneficio" + idkey, totalbeneficio);
+  //setVal("#tsueldo" + idkey, totalfila);
+  //setVal("#tbeneficio" + idkey, totalbeneficio);
 
   $("#checkdistribuiraut").prop("checked", false);
 
@@ -2029,17 +2000,17 @@ function actuliza_valor_tabla_gastos(valor_gastos) {
     setVal("#cant_cajeros", cant_cajero);
     setVal("#cant_cocina", cant_cocina);
     setVal("#cant_meseros", cant_meseros);
-    setVal("#tsueldo1", parseInt(cant_cajero * sueldo_promedio_base));
-    setVal("#tbeneficio1", parseInt(cant_cajero * valor_beneficio_promedio));
-    setVal("#tsueldo2", parseInt(cant_cocina * sueldo_promedio_base));
-    setVal("#tbeneficio2", parseInt(cant_cocina * valor_beneficio_promedio));
-    setVal("#tsueldo3", parseInt(cant_meseros * sueldo_promedio_base));
-    setVal("#tbeneficio3", parseInt(cant_meseros * valor_beneficio_promedio));
+    setVal("#tsueldo1", parseInt( sueldo_promedio_base));
+    setVal("#tbeneficio1", parseInt(valor_beneficio_promedio));
+    setVal("#tsueldo2", parseInt( sueldo_promedio_base));
+    setVal("#tbeneficio2", parseInt(valor_beneficio_promedio));
+    setVal("#tsueldo3", parseInt( sueldo_promedio_base));
+    setVal("#tbeneficio3", parseInt(valor_beneficio_promedio));
     setVal("#cant_administrador", cant_administradores);
-    setVal("#tsueldo4", parseInt(cant_administradores * sueldo_promedio_base));
+    setVal("#tsueldo4", parseInt(sueldo_promedio_base));
     setVal(
       "#tbeneficio4",
-      parseInt(cant_administradores * valor_beneficio_promedio)
+      parseInt(valor_beneficio_promedio)
     );
 
     calcula_totales_empleados(false);
@@ -2175,11 +2146,11 @@ function event_input_total_semanal2(event) {
   });
 
   const SEMANAS_MES = 4;
-  const consumoPromedio = document.getElementById("tenedor_promedio2");
+  const consumoPromedio = document.getElementById("tenedor_promedio");
   const metaVentasMensual = document.querySelector("#objetivo_mensual").value;
   const meta_alcanzada = clienttotal2 * consumoPromedio.value * SEMANAS_MES;
+  calcularVentasMesPorCliente(consumoPromedio.value,clienttotal2)
 
-  actualizarGrafico(metaVentasMensual, meta_alcanzada);
 
   if (meta_alcanzada < metaVentasMensual) {
     VALIDACION.pasa = false;
@@ -2219,4 +2190,32 @@ function enviar(html) {
 function setVal(selector, newValue) {
   $(selector).val(newValue);
   $(selector).attr("value", newValue);
+}
+function financial(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
+
+function validarNumero(input) {
+  // Obtener el valor del input
+  var numero = input.value;
+  
+  // Convertir el valor a un número entero
+  var valorNumerico = parseInt(numero);
+  console.log(valorNumerico)
+  
+  // Verificar si el número está entre 0 y 100
+  if (valorNumerico >= 0 && valorNumerico <= 100) {
+
+    return true;
+    
+  } else {
+
+    if(valorNumerico>100){
+      input.value=100;
+    }else{
+      input.value="";
+    }
+
+    return false;
+  }
 }

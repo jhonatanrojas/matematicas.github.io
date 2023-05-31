@@ -39,10 +39,7 @@
 
         <h1 class=" ">
           <span class="titulo-principal text-uppercase"> Matematicas para restaurantes</span>
-          <span class="text-muted subtitulo-principal">
-            Conviértete en un experto en la
-            gestión financiera de tu restaurante
-          </span>
+     
         </h1>
 
 
@@ -309,7 +306,7 @@
                   </div>
                   <input type="text" min="0" class=" form-input
                    validar_input " id="rentabilidad" placeholder="0" />
-                  <label for="rentabilidad " class="text-muted text-center"> Ingresa tu objetivo de ingresos mensual</label>
+                  <label for="rentabilidad " class="text-muted text-center"> Ingresa tu objetivo de ingresos mensual $</label>
 
                 </div>
 
@@ -334,9 +331,7 @@
               al mes.
             </h2>
             <p class="text-muted">
-              Para entender cómo llegas a $<span class="valor_ganancia2"></span>
-              de utilidad al mes, puedes manejar el tenedor “promedio de tu
-              carta”. Cambia el valor en promedio que consume un cliente en tu
+              Cambia el valor en promedio que consume un cliente en tu
               local por cada visita cambiando el “tenedor promedio” aquí
               abajo.
             </p>
@@ -351,7 +346,7 @@
                   <input type="text" class="form-control text-right validar_input" id="tenedor_promedio" value="" placeholder="0" min="0" max="" />
 
                 </div>
-                <label for="tenedor_promedio" class="text-muted"> Tenedor promedio</label>
+                <label for="tenedor_promedio" class="text-muted"> Tenedor promedio $</label>
               </div>
             </div>
 
@@ -367,15 +362,14 @@
           <div class="sub__title__container">
             <h2>Tu plan actual</h2>
             <p text-muted>
-              Para entender cómo llegas a $<span class="valor_ganancia3"></span>
-              al mes, puedes manejar el tenedor promedio de tu carta y el
-              volumen de personas que atiendes por día en tu local. Aquí abajo
-              puedes simular esto y ver el resultado.
+              Para  llegar a $<span class="valor_ventap"></span>
+              al mes, hemos simulado el volumen de personas que debes atender por día en tu local. Aquí abajo puedes cambiar y ver el resultado
+             
             </p>
           </div>
 
           <div class="input__container">
-            <div class="row align-items-center">
+            <div class="row align-items-center  justify-content-md-center ">
               <div class="col-12 col-md-6">
 
                 <div class="table-responsive">
@@ -446,7 +440,7 @@
                       <tr>
                         <td data-label="J">Jueves</td>
                         <td data-label="Client por dia*">
-                          <div class="pt-input-group">
+                          <div clafss="pt-input-group">
                             <div class="pt-input-group">
                               <div class="tick-slider">
                                 <input id="jueves" class="tick-slider-pag-3 validar_input clientes-dia" type="text" min="0" max="100" step="5" data-id="4" value="20" />
@@ -538,18 +532,9 @@
                   </table>
 
                 </div>
+                <label for="" class="total_ventas_clientes"></label>
               </div>
-              <div class="col-12 col-md-6">
-                <div class="row justify-content-center align-items-lg-center">
-
-                  <input type="hidden" class="form-control text-right" id="tenedor_promedio2" value="" />
-
-
-                  <div class="imagen-grafico">
-                    <canvas id="myChart"></canvas>
-                  </div>
-                </div>
-              </div>
+            
 
 
             </div>
@@ -573,27 +558,23 @@
           </div>
 
           <div class="input__container">
-            <div class="row justify-content-center  d-flex align-items-center">
-              <div class="col-12 col-md-4 align-self-center">
+            <div class="row justify-content-center  d-flex align-items-center mb-5">
+              <div class="col-12 col-md-6 align-self-center">
                 <label for="tenedor_promedio"> Costo promedio %</label>
                 <div class="input-group number-spinner">
 
-                  <input type="text" class="form-control validar_input text-center" id="costo_promedio" value="35" />
+                  <input type="text" class="form-control validar_input text-center" onkeyup="validarNumero(this)" id="costo_promedio" value="35" />
 
                 </div>
               </div>
 
-              <div class="col-12 col-md-6">
-                <div class="chart-container imagen-grafico-costo">
-                  <canvas id="chart_costo_promedio"></canvas>
-                </div>
-              </div>
+            
             </div>
 
             <div class="buttons">
               <a class="prev__btn btn btn btn-secondary" onclick="prevForm();">Regresar</a>
               <a class="nxt__btn btn-info text-white" onclick="nextForm();">Siguiente</a>
-
+ 
               <!-- a class="nxt__btn btn-info text-white" id="submitBtn" onclick="nextForm();">Siguiente</a -->
             </div>
             <p class="text-center page">Pag 4/8</p>
@@ -652,7 +633,7 @@
             <h2>Ahora exploremos la cantidad de personal que necesitas.</h2>
             <p text-muted>
               De acuerdo a tu objetivo de ventas y a los estándar de la
-              industria, puedes gastar hasta $<span class="valor_ganancia4"></span>
+              industria, puedes gastar hasta $<span class="text-gasto-maximo"></span>
               en personal cada mes. Usa la siguiente tabla para proyectar la
               cantidad de empleados del Establecimiento.
             </p>
@@ -903,7 +884,11 @@
               </div>
 
            
-              <div class="col-12 col-md-3 align-self-center">
+            </div>
+
+            <div class="row justify-content-center">
+              
+            <div class="col-12 col-md-4 align-self-center">
                 <label for="tenedor_promedio"> Gasto empleado Mes $</label>
                 <div class="input-group number-spinner">
 
@@ -918,7 +903,6 @@
                 </div>
               </div>
             </div>
-
             <div class="buttons">
               <a class="prev__btn btn btn btn-secondary" onclick="prevForm();">Regresar</a>
               <a class="nxt__btn btn-info text-white" onclick="nextForm();">Siguiente</a>
@@ -964,20 +948,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row" class="  text-left pl-3">Otros Gastos generales</th>
-                    <td>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">$</span>
-                        </div>
-                        <input type="text" class="form-control validar_input" id="gastogral2" value="0" />
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
                     <th class="  text-left pl-3">
-                      Internet
+                    Servicios Basicos: Luz, agua, internet, etc. 
                     </th>
 
                     <td>
@@ -989,6 +961,20 @@
                       </div>
                     </td>
                   </tr>
+                  <tr>
+                    
+                    <th scope="row" class="  text-left pl-3">Gastos Marketing</th>
+                    <td>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="text" class="form-control validar_input" id="gastogral2" value="0" />
+                      </div>
+                    </td>
+                  </tr>
+
+                
                   <tr>
                     <th class="  text-left pl-3">
                       Otros
@@ -1009,21 +995,22 @@
             <button data-toggle="tooltip" data-placement="top" title="Agregar nueva fila" onclick="agregar_fila_gastos()" class="btn btn-primary w-25 col-2 align-self-end float-right">
               <i class="fa fa-plus" aria-hidden="true"></i>
             </button>
-           <div class="row d-flex align-items-center justify-content-center" style="height:0%">
-           <div class="col-8  ">
-           
-                <div class="form-group number-spinner">
-                <label for="tenedor_promedio"> Gastos $</label>
-                  <input type="text" class="form-control text-center" id="total_gasto_general" value="0" readonly />
-
-                </div>
-            </div>
-           </div>
+         
           
                
               </div>
             </div>
 
+            <div class="row d-flex align-items-center justify-content-center" style="height:0%">
+           <div class="col-8  ">
+           
+                <div class="form-group number-spinner">
+                <label for="tenedor_promedio"> Gastos generales mes $</label>
+                  <input type="text" class="form-control text-center" id="total_gasto_general" value="0" readonly />
+
+                </div>
+            </div>
+           </div>
             <div class="buttons">
               <a class="prev__btn btn btn btn-secondary" onclick="prevForm();">Regresar</a>
               <a class="nxt__btn btn-info text-white" onclick="nextForm();">Siguiente</a>
@@ -1035,10 +1022,9 @@
         </fieldset>
         <fieldset class="active__form fieldsetform animate__animated imprimirpdf" id="form8">
           <div class="sub__title__container">
-            <h2>!Listo! Mira el plan financiero de tu Establecimiento.</h2>
+            <h2>!Listo! Mira la matemática de tu restaurante..</h2>
             <p text-muted>
-              Hemos generado con tus datos, el plan financiero/matemático de
-              tu Establecimiento. Puedes explorar el plan dando click en cada
+            Hemos generado con tus datos, el plan financiero/matemático de tu establecimiento. Puedes explorar el plan dando click en cada
               sección del grafico. Adicionalmente puedes exportarlo a PDF o
               generar una cuenta gratuita para grabarlo y hacer seguimiento de
               su cumplimiento.
@@ -1046,7 +1032,7 @@
           </div>
 
           <div class="input__container">
-            <div class="row">
+            <div class="row row justify-content-md-center">
               <div class="col-12 col-md-4">
                 <div class="imagen-grafico-chartplanfinanciero d-flex flex-row">
                   <canvas id="chartplanfinanciero"></canvas>
@@ -1064,20 +1050,20 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-3">
-            <div class="contenedor-botones-f row     justify-content-center mb-5">
+            
+          </div>
+          <div class="row     justify-content-center">
+          <div class="col-12 col-md-6">
+            <div class="contenedor-botones-f     justify-content-center mb-5">
               <div class=" col-12   no-print justify-content-center d-flex flex-column align-self-center">
                 <button type="button" class="btn btn-info btn-block m-1 no-print " onclick="imprimirpdf()">
                   Descargar plan financiero PDF
                 </button>
           
          
-                <button type="button" class="btn btn-secondary btn-block  m-1 no-print" onclick="enviar_correo()">
-                  Enviar Correo
-                </button>
       
               
-                <form id="form-login" action="login.php" method="post">
+                <form id="form-login" action="registrar.php" method="post">
 
 
                   <input type="hidden" name="clientes_mes" id="clientes_mes">
@@ -1090,7 +1076,8 @@
                   <input type="hidden" name="form_gasto_personal" id="form_gasto_personal">
                   <input type="hidden" name="form_tenedor_promedio" id="form_tenedor_promedio">
                   <input type="hidden" name="form_costo" id="form_costo">
-                  <button type="submit" class="btn btn-primary btn-block  m-1 no-print">Guadar plan para seguimiento</button>
+                  <button type="submit" class="btn btn-primary btn-block  m-1 no-print">Crear Cuenta de Seguimiento</button>
+                  <span for="" class="text-muted"> No te quedes ahi! Puedes crear una cuenta gratuita en Matemática para Restaurantes para dar seguimiento a tu plan</span>
                 </form>
               </div>
             </div>
