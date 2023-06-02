@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     /-->
-  <link rel="stylesheet" href="style.css?v=2.0.4" />
+  <link rel="stylesheet" href="style.css?v=3.0.4" />
   <link rel="stylesheet" href="style-movil.css?v=1" />
 
   <style>
@@ -177,7 +177,10 @@
             <ion-icon name="checkmark-outline"></ion-icon>
 
           </div>
-          <h5 class="titulo-icon text-center">Plan Financiero de tu establecimiento</h5>
+          <h5 class="titulo-icon text-center">Plan Financiero de tu establecimiento 
+
+       
+          </h5>
 
 
 
@@ -1108,7 +1111,7 @@
     const nxtBtn = document.querySelector("#submitBtn");
   </script>
 
-  <script src="app.js?v=1.0.2"></script>
+  <script src="app.js?v=2"></script>
 
   <script type="text/javascript" src="#">
     $(function() {
