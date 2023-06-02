@@ -702,7 +702,10 @@ function nextForm() {
      * PASO 8
      */
   } else if (viewId === 8) {
+    //actualizarGrafico_final
     actualizarGrafico_final();
+
+
 
     const tabla_gasto_general = document.getElementById("tabla_gasto_general");
     const filas_gasto_general = tabla_gasto_general.getElementsByTagName("tr");
